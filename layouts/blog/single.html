@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="container py-4">
+  <article class="blog-post">
+    <h1 class="blog-post-title">{{ .Title }}</h1>
+    <p class="blog-post-meta">{{ .Date.Format "January 2, 2006" }} by {{ .Site.Params.author | default "Admin" }}</p>
+    <hr>
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

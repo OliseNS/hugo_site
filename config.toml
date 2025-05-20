@@ -1,0 +1,124 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Olisemeka Nmarkwe"
+
+[params]
+  description = "Personal website of Olisemeka Nmarkwe, a computer science student passionate about data analysis and machine learning."
+  githubURL = "https://github.com/OliseNS"
+  linkedinURL = "https://www.linkedin.com/in/olisemekanmarkwe-ds/"
+  email = "olisemekanmarkwe@gmail.com"
+  copyright = "Olisemeka Nmarkwe"
+  googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSde9CJry3MXK286iR9AHMVD6uDOrrCKMlpCv5gWp1qh_hltPw/formResponse"
+
+  [params.author]
+    name = "Olisemeka Nmarkwe"
+    tagline = "is a motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript, Olisemeka is seeking a data science or software engineering internship to apply these skills and gain valuable industry experience."
+
+  [params.skills]
+    [[params.skills.programming_languages]]
+      name = "JavaScript"
+      icon = "fab fa-js"
+    [[params.skills.programming_languages]]
+      name = "React"
+      icon = "fab fa-react"
+    [[params.skills.programming_languages]]
+      name = "Python"
+      icon = "fab fa-python"
+    [[params.skills.programming_languages]]
+      name = "SQL"
+      icon = "fas fa-database"
+    [[params.skills.programming_languages]]
+      name = ".Net"
+      icon = "fab fa-microsoft"
+
+    [[params.skills.technical_skills]]
+      name = "Predictive Modeling"
+      icon = "fas fa-brain"
+    [[params.skills.technical_skills]]
+      name = "SEO"
+      icon = "fas fa-chart-line"
+    [[params.skills.technical_skills]]
+      name = "Oracle Apex"
+      icon = "fas fa-cogs"
+    [[params.skills.technical_skills]]
+      name = "Machine Learning"
+      icon = "fas fa-robot"
+
+    [[params.skills.tools]]
+      name = "Pandas"
+      icon = "fas fa-table"
+    [[params.skills.tools]]
+      name = "Seaborn"
+      icon = "fas fa-chart-bar"
+    [[params.skills.tools]]
+      name = "Matplotlib"
+      icon = "fas fa-chart-pie"
+    [[params.skills.tools]]
+      name = "Scikit-learn"
+      icon = "fas fa-brain"
+    [[params.skills.tools]]
+      name = "Google Colab"
+      icon = "fab fa-google"
+    [[params.skills.tools]]
+      name = "Kaggle"
+      icon = "fab fa-kaggle"
+
+    [[params.skills.modeling_techniques]]
+      name = "Artificial Neural Networks"
+      icon = "fas fa-network-wired"
+    [[params.skills.modeling_techniques]]
+      name = "Support Vector Machines"
+      icon = "fas fa-sitemap"
+    [[params.skills.modeling_techniques]]
+      name = "Decision Trees"
+      icon = "fas fa-tree"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 20
+  [[menu.main]]
+    name = "Now"
+    url = "/now/"
+    weight = 30
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 40
+
+  [[menu.footer_navigation]]
+    name = "About Me"
+    url = "/about/"
+    weight = 10
+  [[menu.footer_navigation]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 20
+  [[menu.footer_navigation]]
+    name = "Now"
+    url = "/now/"
+    weight = 30
+  [[menu.footer_navigation]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 40
+
+  [[menu.footer_connect]]
+    name = "GitHub"
+    url = "https://github.com/OliseNS"
+    weight = 10
+    params.target = "_blank"
+  [[menu.footer_connect]]
+    name = "Email"
+    url = "mailto:olisemekanmarkwe@gmail.com"
+    weight = 20
+  [[menu.footer_connect]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/olisemekanmarkwe-ds/"
+    weight = 30
+    params.target = "_blank"

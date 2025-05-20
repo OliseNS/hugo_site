@@ -1,0 +1,56 @@
+{{ define "main" }}
+<main class="container mt-5">
+  <div class="page-header">
+    <h2 class="page-title">About Me</h2>
+    <p class="page-subtitle">My journey, passions, and expertise</p>
+  </div>
+
+  <div class="about-content fade-in">
+    {{ .Content }}
+    {{ if not .Content }}
+      <div class="empty-card">
+        <i class="fas fa-user-circle empty-card-icon"></i>
+        <h4 class="empty-card-title">About Page Coming Soon</h4>
+        <p class="empty-card-message">I'm working on creating a detailed about page to share my story with you. Check back soon!</p>
+      </div>
+    {{ end }}
+  </div>
+</main>
+{{ end }}
+
+{{ define "head_extra" }}
+<style>
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  .about-content h1 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .about-content p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  .about-content li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-content a {
+    color: var(--accent);
+  }
+</style>
+{{ end }}
+
+{{ define "scripts_extra" }}
+<script src="{{ "js/about-page.js" | relURL }}"></script>
+{{ end }}

@@ -1,0 +1,160 @@
+/* Project Cards Styling */
+.project-card {
+  background-color: rgba(35, 32, 26, 0.95);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(238, 195, 94, 0.2);
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #d1a347);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card-img-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.project-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid var(--accent); /* Match home page image border */
+  border-radius: var(--radius);     /* Match home page image radius */
+  padding: 4px;                    /* Match home page image padding */
+  margin-bottom: 0;
+  transition: transform 0.5s ease;
+}
+
+.project-card-img-placeholder {
+  background-color: #23201a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-img-placeholder i {
+  color: var(--accent);
+}
+
+.project-card:hover .project-card-img {
+  transform: scale(1.05);
+}
+
+.project-card-content {
+  padding: 1.8rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-title {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.project-card-description {
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-card-tag {
+  background-color: rgba(238, 195, 94, 0.15);
+  color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-card-tag {
+  background-color: rgba(238, 195, 94, 0.25);
+}
+
+.project-card-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.project-card-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: var(--background);
+  background-color: var(--accent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.project-card-link:hover {
+  background-color: #d1a347;
+  color: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .project-card {
+    margin-bottom: 2rem;
+  }
+  
+  .project-card-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .project-card-link {
+    width: 100%;
+  }
+}
+
+/* No unused selectors found in project-cards.css based on project usage. No changes made. */

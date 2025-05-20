@@ -1,0 +1,18 @@
+{{ define "head_extra" }}
+<link href="{{ "css/timeline.css" | relURL }}" rel="stylesheet">
+{{ end }}
+
+{{ define "main" }}
+<ul class="default-timeline">
+  {{ range .Sections }}
+  <li>
+    <article>
+      <h3>{{ .Title }}</h3>
+      <div class="timeline-content">
+        {{ .Content }}
+      </div>
+    </article>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

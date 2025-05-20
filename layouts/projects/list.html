@@ -1,0 +1,84 @@
+{{ define "main" }}
+<section id="projects" class="projects py-5">
+  <div class="container">
+    <div class="page-header">
+      <h2 class="page-title">Projects</h2>
+      <p class="page-subtitle">Explore my recent work and contributions</p>
+    </div>
+    
+    {{ .Content }}
+    
+    {{ $projects := .Pages }}
+    {{ if $projects }}
+      <div class="row g-4">
+        {{ range $projects }}
+          <div class="col-lg-4 col-md-6">
+            <div class="project-card">
+              <div class="project-card-img-container">
+                {{ $image := "" }}
+                {{ if .Params.image }}
+                  {{ $image = .Params.image }}
+                {{ else }}
+                  {{ range (slice "dither_it_1.JPG" "dither_it_epoch_vs_loss_P3.png" "dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png") }}
+                    {{ if eq $image "" }}
+                      {{ $staticPath := printf "/assets/%s" . }}
+                      {{ if (fileExists (printf "static%s" $staticPath)) }}
+                        {{ $image = $staticPath }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+                {{ if ne $image "" }}
+                  <img src="{{ $image | relURL }}" class="project-card-img" alt="{{ .Title }}">
+                {{ else }}
+                  <div class="project-card-img project-card-img-placeholder">
+                    <i class="fas fa-code fa-3x"></i>
+                  </div>
+                {{ end }}
+              </div>
+              <div class="project-card-content">
+                <h3 class="project-card-title">{{ .Title }}</h3>
+                <div class="project-card-description">{{ .Summary }}</div>
+                
+                {{ if .Params.tags }}
+                <div class="project-card-tags">
+                  {{ range .Params.tags }}
+                    <span class="project-card-tag">{{ . }}</span>
+                  {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="project-card-links">
+                  <a href="{{ .RelPermalink }}" class="project-card-link">
+                    <i class="fas fa-info-circle me-1"></i> Details
+                  </a>
+                  {{ if .Params.projectUrl }}
+                  <a href="{{ .Params.projectUrl }}" class="project-card-link" target="_blank">
+                    <i class="fas fa-external-link-alt me-1"></i> View Project
+                  </a>
+                  {{ end }}
+                  {{ if .Params.githubUrl }}
+                  <a href="{{ .Params.githubUrl }}" class="project-card-link" target="_blank">
+                    <i class="fab fa-github me-1"></i> Source Code
+                  </a>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    {{ else }}
+      <div class="empty-card">
+        <i class="fas fa-tools empty-card-icon"></i>
+        <h4 class="empty-card-title">Projects Coming Soon</h4>
+        <p class="empty-card-message">I'm working on documenting my projects and will add them here soon. Check back later to see my portfolio!</p>
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ define "head_extra" }}
+<link href="{{ "css/project-cards.css" | relURL }}" rel="stylesheet">
+{{ end }}

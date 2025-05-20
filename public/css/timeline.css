@@ -1,0 +1,64 @@
+﻿/* Renamed original to timeline.css.bak and adding default timeline styles */
+/* Default timeline */
+.default-timeline {
+  list-style: none;
+  padding: 0;
+}
+/* Professional timeline improvements */
+.default-timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 4px solid var(--accent);
+}
+.default-timeline::before {
+  /* Remove existing pseudo before if any */
+  content: none;
+}
+.default-timeline li {
+  /* Remove spacing specific to old style */
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.default-timeline h3 {
+  position: relative;
+  margin: 2rem 0 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--glass-bg);
+  color: var(--foreground);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+.default-timeline h3::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: var(--background);
+  border: 4px solid var(--accent);
+  border-radius: 50%;
+}
+.default-timeline p,
+.default-timeline ul {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+}
+.default-timeline time {
+  display: none; /* hide if time tags used elsewhere */
+}
+/* Optionally style nested list items */
+.default-timeline ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+.default-timeline ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}

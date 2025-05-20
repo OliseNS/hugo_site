@@ -1,0 +1,104 @@
+{{ define "main" }}
+<section>
+  <div class="container mt-0" id="me">
+    <div class="row align-items-center">
+      <div class="about-image text-lg-start">
+        {{/* Note: Original image assets/dither_it_1.JPG was missing. Placeholder or logic to handle missing image might be needed */}}
+        <img src="{{ "assets/dither_it_1.JPG" | relURL }}" alt="Olisemeka Nmarkwe" class="img-fluid mb-3">
+        <div class="hello-box" id="hello-message">Hello</div>
+      </div>
+
+      <!-- Right Column: Introduction Text -->
+      <div class="col-lg-6">
+        <p class="introduction-text">
+          <strong><a href="{{ "/about/" | relURL }}">{{ .Site.Params.author.name | default "Olisemeka Nmarkwe" }}</a></strong> {{ .Site.Params.author.tagline | default "is a motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript, Olisemeka is seeking a data science or software engineering internship to apply these skills and gain valuable industry experience." | markdownify }}
+        </p>
+        {{/* Note: Original resume assets/Olisemeka_Resume_V1_0.pdf was missing. */}}
+        <a href="{{ "assets/Olisemeka_Resume_V1_0.pdf" | relURL }}" class="btn btn-dark mt-3" style="height: auto; width: fit-content;" download>
+          <i class="fas fa-download" style="margin-right: 0.5rem;"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container py-5">
+  <h2 class="text-center mb-5">Skills & Tools</h2>
+  <div class="row">
+    <!-- Sidebar Navigation -->
+    <div class="col-12 col-md-4">
+      <div id="skills-tools-nav" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+        <a class="p-1 rounded" href="#programming-languages">Programming Languages</a>
+        <a class="p-1 rounded" href="#technical-skills">Technical Skills</a>
+        <a class="p-1 rounded" href="#tools">Tools</a>
+        <a class="p-1 rounded" href="#modeling-techniques">Modeling Techniques</a>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-12 col-md-8">
+      <div data-bs-spy="scroll" data-bs-target="#skills-tools-nav" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        <!-- Programming Languages -->
+        <h4 id="programming-languages">Programming Languages</h4>
+        <ul>
+          {{ range .Site.Params.skills.programming_languages }}
+            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
+          {{ end }}
+        </ul>
+
+        <!-- Technical Skills -->
+        <h4 id="technical-skills">Technical Skills</h4>
+        <ul>
+          {{ range .Site.Params.skills.technical_skills }}
+            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
+          {{ end }}
+        </ul>
+
+        <!-- Tools -->
+        <h4 id="tools">Tools</h4>
+        <ul>
+          {{ range .Site.Params.skills.tools }}
+            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
+          {{ end }}
+        </ul>
+
+        <!-- Modeling Techniques -->
+        <h4 id="modeling-techniques">Modeling Techniques</h4>
+        <ul>
+          {{ range .Site.Params.skills.modeling_techniques }}
+            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts_extra" }}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const helloMessage = document.getElementById("hello-message");
+    const messages = [
+      "Hello",          // English
+      "नमस्ते",          // Nepali
+      "Ndewo",          // Igbo
+      "Ciao",           // Italian
+      "Bonjour",        // French
+      "Hola",           // Spanish
+      "こんにちは",       // Japanese
+      "Guten Tag",      // German
+      "Привет",         // Russian
+      "Olá",            // Portuguese
+      "Kamusta",        // Filipino
+    ];
+    let index = 0;
+    if (helloMessage) {
+      setInterval(() => {
+        helloMessage.textContent = messages[index];
+        index = (index + 1) % messages.length;
+      }, 1500);
+    }
+  });
+</script>
+{{ end }}

@@ -1,0 +1,25 @@
+﻿/* Renamed original to timeline.css.bak and adding default timeline styles */
+/* Default timeline */
+.default-timeline {
+  list-style: none;
+  padding: 0;
+}
+.default-timeline li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.default-timeline li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+/* Optionally, timeline markers */
+.default-timeline time {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: var(--accent);
+}

@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">{{ .Title }}</h2>
+  
+  {{ .Content }}
+  
+  {{ if .Pages }}
+    <div class="row mt-4">
+      {{ range .Pages }}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+              <p class="card-text">{{ .Summary }}</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="{{ .RelPermalink }}" class="btn btn-sm btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
+  
+  {{ if and (not .Content) (not .Pages) }}
+    <div class="alert alert-info text-center mt-4" role="alert">
+      <span>No content available for this section yet. Check back soon!</span>
+    </div>
+  {{ end }}
+</div>
+{{ end }}
