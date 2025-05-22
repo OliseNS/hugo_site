@@ -1,0 +1,106 @@
+.project-detail {
+  background-color: #181a1b;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: #e9ecef;
+  color: #495057;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.project-tag:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.project-meta {
+  font-size: 0.9rem;
+}
+
+.project-featured-image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-featured-image img {
+  width: 100%;
+  height: auto;
+}
+
+.project-content {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.project-content h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.project-content p {
+  margin-bottom: 1.5rem;
+}
+
+.project-content ul, 
+.project-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
+}
+
+.project-content li {
+  margin-bottom: 0.5rem;
+}
+
+.project-links {
+  margin-top: 3rem;
+}
+
+.project-navigation {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1.5rem;
+}
+
+.project-nav-link {
+  display: block;
+  text-decoration: none;
+  color: #212529;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.project-nav-link:hover {
+  background-color: #f8f9fa;
+  color: #0d6efd;
+}
+
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 2rem;
+  }
+  
+  .project-content {
+    font-size: 1rem;
+  }
+}

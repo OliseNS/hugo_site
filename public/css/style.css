@@ -474,6 +474,11 @@ input, textarea, select {
   .about-image {
     max-width: 50%; /* Adjust the size for medium devices */
   }
+
+  .home-hero-image {
+    float: left;
+    margin: 0 15px 15px 0;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -542,16 +547,49 @@ input, textarea, select {
   margin-bottom: 0.75rem;
 }
 
-@media (max-width: 768px) {
-  .now-card {
-    padding: 1.5rem;
-  }
-  
-  .now-title {
-    font-size: 1.8rem;
-  }
-  
-  .now-content {
-    font-size: 1rem;
+/* Project-specific overrides */
+.project-card-tag {
+  background-color: rgba(238, 195, 94, 0.12) !important;
+  color: var(--accent) !important;
+  border: none !important;
+}
+
+.project-card-link {
+  color: var(--accent) !important;
+  background-color: rgba(238, 195, 94, 0.08) !important;
+  border: 1px solid var(--accent) !important;
+}
+
+.project-card-link:hover {
+  color: #fff !important;
+  background-color: var(--accent) !important;
+}
+
+/* Reduce default img border for non-project images */
+img:not(.project-card-img) {
+  border-width: 2px;
+}
+
+.home-hero-image {
+  width: 320px;
+  height: auto;
+  max-width: 90vw;
+  border: 4px solid var(--accent);
+  border-radius: var(--radius);
+  display: block;
+  margin: 0 auto 15px auto;
+  box-sizing: border-box;
+}
+
+/* Align hello text and resume button to the right */
+.home-hero-text {
+  text-align: right;
+}
+
+/* Center image on mobile */
+@media (max-width: 767px) {
+  .home-hero-image {
+    margin: 0 auto;
+    float: none;
   }
 }

@@ -4,18 +4,34 @@ layout: "now"
 updated: "May 2025"
 ---
 
-### May 2025
-I'm working on exciting projects to boost my skills and creativity. My current focus is on:
-- Building and improving my personal website with Hugo
-- Learning new technologies and frameworks
-- Exercising regularly to stay active and healthy 💪🏿
-- Connecting with my community and sharing knowledge
+<ul>
+  <li>
+    <div class="timeline-date">May 2025</div>
+    <h3>Current Focus</h3>
+    <p>I'm working on several professional development initiatives:</p>
+    <ul>
+      <li>Building and improving my personal website with Hugo</li>
+      <li>Learning new technologies and frameworks</li>
+      <li>Maintaining a consistent exercise regimen</li>
+      <li>Knowledge sharing and community engagement</li>
+    </ul>
+  </li>
 
-### January 2025
-In January, I experienced my first snowfall since moving to the US. It was a magical moment, playing in the snow with friends. The new semester has brought exciting project classes I'm thrilled about.
+  <li>
+    <div class="timeline-date">January 2025</div>
+    <h3>New Beginnings</h3>
+    <p>Experienced my first snowfall since moving to the United States. The new semester has introduced several challenging project-based classes that align with my professional goals.</p>
+  </li>
 
-### December 2024
-End of year reflection time. Looking back at all the accomplishments and growth this year. Planning for an even better 2025!
+  <li>
+    <div class="timeline-date">December 2024</div>
+    <h3>Year in Review</h3>
+    <p>Conducted an end-of-year assessment of accomplishments and professional growth. Established strategic objectives for continued development in 2025.</p>
+  </li>
 
-### About this page
-Inspired by [NowNowNow.com](https://nownownow.com/), this page provides a snapshot of my current activities and interests. Check back regularly for updates on what I'm focusing on.
+  <li>
+    <div class="timeline-date">About</div>
+    <h3>Purpose</h3>
+    <p>This page provides a chronological overview of my current professional activities and focus areas. Inspired by <a href="https://nownownow.com/">NowNowNow.com</a>.</p>
+  </li>
+</ul>

@@ -1,4 +1,9 @@
-/* Common animations for the entire site */
+/* 
+ * Animations CSS File - Hugo Site
+ * This file contains all animations and transitions
+ */
+
+/* Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -129,12 +134,12 @@ img {
   height: auto;
 }
 
-/* Add subtle hover effect to all cards */
-.blog-card, .project-card {
+/* Hover effect for blog card only */
+.blog-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog-card:hover, .project-card:hover {
+.blog-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--hover-shadow);
 }

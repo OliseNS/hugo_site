@@ -1,0 +1,123 @@
+/* 
+ * Components CSS File - Hugo Site
+ * This file contains styles for reusable UI components
+ */
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hover-shadow);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+/* Cards */
+.card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: rgba(238, 195, 94, 0.2);
+  color: var(--accent);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.tag:hover {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+/* Page Headers */
+.page-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.page-title {
+  color: var(--accent);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  display: inline-block;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+.page-subtitle {
+  color: var(--foreground);
+  font-size: 1.1rem;
+}
+
+/* Skills & Tools Components */
+.skills-list, .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.skill-item, .tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  width: 120px;
+  transition: var(--transition);
+}

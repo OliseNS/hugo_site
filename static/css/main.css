@@ -1,0 +1,17 @@
+/* 
+ * Main CSS File - Hugo Site
+ * Author: Olise
+ * Last updated: May 22, 2025
+ */
+
+/* Import other stylesheets */
+@import 'variables.css';
+@import 'base.css';
+@import 'animations.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'header.css';
+@import 'projects.css';
+@import 'blog.css';
+@import 'timeline.css';
+@import 'responsive.css';

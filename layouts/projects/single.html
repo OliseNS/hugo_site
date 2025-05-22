@@ -1,0 +1,75 @@
+{{ define "main" }}
+<section class="project-detail py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <div class="project-header mb-4">
+          <h1 class="project-title mb-3">{{ .Title }}</h1>
+          
+          {{ if .Params.tags }}
+          <div class="project-tags mb-3">
+            {{ range .Params.tags }}
+              <a href="{{ (printf "/tags/%s" . | urlize) | relURL }}" class="project-tag">{{ . }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
+          
+          <div class="project-meta text-muted">
+            <span class="me-3"><i class="far fa-calendar me-1"></i>{{ .Date.Format "January 2, 2006" }}</span>
+          </div>
+        </div>
+        
+        {{ if .Params.image }}
+        <div class="project-featured-image mb-4">
+          <img src="{{ .Params.image | relURL }}" class="img-fluid rounded" alt="{{ .Title }}" />
+        </div>
+        {{ end }}
+        
+        <div class="project-content">
+          {{ .Content }}
+        </div>
+        
+        {{ if .Params.githubUrl }}
+        <div class="project-links mt-4">
+          <a href="{{ .Params.githubUrl }}" class="btn btn-primary" target="_blank">
+            <i class="fab fa-github me-2"></i>GitHub Repository
+          </a>
+          
+          {{ if .Params.projectUrl }}
+          <a href="{{ .Params.projectUrl }}" class="btn btn-outline-secondary ms-2" target="_blank">
+            <i class="fas fa-external-link-alt me-2"></i>View Live Project
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+        
+        <div class="project-navigation mt-5">
+          <div class="row">
+            {{ with .PrevInSection }}
+            <div class="col-6">
+              <a href="{{ .RelPermalink }}" class="project-nav-link prev">
+                <span class="d-block text-muted small"><i class="fas fa-arrow-left me-1"></i>Previous Project</span>
+                {{ .Title }}
+              </a>
+            </div>
+            {{ end }}
+            
+            {{ with .NextInSection }}
+            <div class="col-6 text-end">
+              <a href="{{ .RelPermalink }}" class="project-nav-link next">
+                <span class="d-block text-muted small">Next Project<i class="fas fa-arrow-right ms-1"></i></span>
+                {{ .Title }}
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "head_extra" }}
+<link href="{{ "css/project-detail.css" | relURL }}" rel="stylesheet">
+{{ end }}

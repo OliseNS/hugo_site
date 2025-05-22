@@ -1,64 +1,134 @@
-﻿/* Renamed original to timeline.css.bak and adding default timeline styles */
+/* 
+ * Timeline CSS File - Hugo Site
+ * This file contains styles for timeline components
+ */
+
 /* Default timeline */
-.default-timeline {
-  list-style: none;
-  padding: 0;
-}
-/* Professional timeline improvements */
-.default-timeline {
+.now-page {
   position: relative;
-  margin: 2rem 0;
-  padding-left: 2rem;
-  border-left: 4px solid var(--accent);
+  margin: var(--spacing-lg) 0;
+  padding-left: var(--spacing-lg);
+  border-left: 2px solid var(--accent);
 }
-.default-timeline::before {
-  /* Remove existing pseudo before if any */
-  content: none;
+
+.now-page ul {
+  padding-left: var(--spacing-md);
+  margin: var(--spacing-sm) 0;
 }
-.default-timeline li {
-  /* Remove spacing specific to old style */
-  margin-bottom: 0;
+
+.now-page li {
+  margin-bottom: var(--spacing-xl);
   padding-left: 0;
   list-style: none;
-}
-.default-timeline h3 {
   position: relative;
-  margin: 2rem 0 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--glass-bg);
-  color: var(--foreground);
-  border-radius: var(--radius);
-  box-shadow: var(--card-shadow);
 }
-.default-timeline h3::before {
+
+.now-page h3 {
+  position: relative;
+  margin: 0 0 var(--spacing-sm);
+  padding: 0;
+  color: var(--headings);
+  font-weight: 600;
+}
+
+.now-page h3::before {
   content: '';
   position: absolute;
-  left: -2rem;
+  left: calc(-1 * var(--spacing-lg) - 4px);
   top: 50%;
   transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
+  width: 12px;
+  height: 12px;
   background: var(--background);
-  border: 4px solid var(--accent);
+  border: 2px solid var(--accent);
   border-radius: 50%;
 }
-.default-timeline p,
-.default-timeline ul {
-  margin: 0 0 1.5rem;
-  padding-left: 1.5rem;
+
+.now-page p {
+  margin: 0 0 var(--spacing-md);
+  padding-left: 0;
 }
-.default-timeline time {
-  display: none; /* hide if time tags used elsewhere */
+
+.now-page .timeline-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: 0.5px;
 }
-/* Optionally style nested list items */
-.default-timeline ul li {
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
+
+/* Experience timeline */
+.experience-timeline {
   position: relative;
+  max-width: 800px;
+  margin: 0 auto;
 }
-.default-timeline ul li::before {
-  content: '\2022';
+
+.experience-timeline::after {
+  content: '';
   position: absolute;
+  width: 4px;
+  background-color: var(--accent);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.experience-container {
+  position: relative;
+  width: 50%;
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.experience-container.left {
   left: 0;
-  color: var(--accent);
+}
+
+.experience-container.right {
+  left: 50%;
+}
+
+.experience-container::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  background-color: var(--background);
+  border: 4px solid var(--accent);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.experience-container.right::after {
+  left: -8px;
+}
+
+.experience-content {
+  padding: var(--spacing-lg);
+  background-color: rgba(35, 32, 26, 0.95);
+  position: relative;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(238, 195, 94, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.experience-content h3 {
+  margin-top: 0;
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+.experience-date {
+  font-size: 0.9rem;
+  color: rgba(236, 234, 229, 0.7);
+  margin-bottom: var(--spacing-sm);
 }

@@ -1,21 +1,17 @@
 {{ define "main" }}
 <section>
   <div class="container mt-0" id="me">
-    <div class="row align-items-center">
-      <div class="about-image text-lg-start">
-        {{/* Note: Original image assets/dither_it_1.JPG was missing. Placeholder or logic to handle missing image might be needed */}}
-        <img src="{{ "assets/dither_it_1.JPG" | relURL }}" alt="Olisemeka Nmarkwe" class="img-fluid mb-3">
+    <div class="home-hero-row">
+      <div>
+        <img src="{{ "assets/dither_it_1.JPG" | relURL }}" alt="Olisemeka Nmarkwe" class="home-hero-image">
         <div class="hello-box" id="hello-message">Hello</div>
       </div>
-
-      <!-- Right Column: Introduction Text -->
-      <div class="col-lg-6">
+      <div class="home-hero-text">
         <p class="introduction-text">
           <strong><a href="{{ "/about/" | relURL }}">{{ .Site.Params.author.name | default "Olisemeka Nmarkwe" }}</a></strong> {{ .Site.Params.author.tagline | default "is a motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript, Olisemeka is seeking a data science or software engineering internship to apply these skills and gain valuable industry experience." | markdownify }}
         </p>
-        {{/* Note: Original resume assets/Olisemeka_Resume_V1_0.pdf was missing. */}}
-        <a href="{{ "assets/Olisemeka_Resume_V1_0.pdf" | relURL }}" class="btn btn-dark mt-3" style="height: auto; width: fit-content;" download>
-          <i class="fas fa-download" style="margin-right: 0.5rem;"></i> Download Resume
+        <a href="{{ "assets/Olisemeka_Resume_V1_0.pdf" | relURL }}" class="btn btn-dark btn-download-resume" download>
+          <i class="fas fa-download"></i> Download Resume
         </a>
       </div>
     </div>

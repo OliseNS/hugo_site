@@ -34,7 +34,6 @@
   opacity: 0.8;
 }
 
-/* Empty State Card Styling */
 .empty-card {
   background-color: rgba(35, 32, 26, 0.8);
   border-radius: var(--radius);

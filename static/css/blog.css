@@ -1,0 +1,178 @@
+/* 
+ * Blog CSS File - Hugo Site
+ * This file contains all blog-related styles
+ */
+
+/* Blog Section */
+.blog-section {
+  padding: 3rem 0;
+}
+
+/* Blog Cards */
+.blog-card {
+  background-color: rgba(35, 32, 26, 0.95);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(238, 195, 94, 0.2);
+  position: relative;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent);
+}
+
+.blog-card:hover::after {
+  opacity: 1;
+}
+
+.blog-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #d1a347);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-card-content {
+  padding: var(--spacing-lg);
+}
+
+.blog-card-title {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.blog-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.blog-card-title a:hover {
+  opacity: 0.8;
+}
+
+.blog-card-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  color: rgba(236, 234, 229, 0.7);
+  font-size: 0.9rem;
+}
+
+.blog-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.blog-card-excerpt {
+  color: var(--foreground);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.blog-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.blog-card-link:hover {
+  gap: calc(var(--spacing-xs) + 5px);
+}
+
+/* Single Blog Post */
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.blog-post-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.blog-post-title {
+  color: var(--accent);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.blog-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  color: rgba(236, 234, 229, 0.7);
+  font-size: 0.95rem;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-post-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.blog-post-content h2 {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--accent);
+}
+
+.blog-post-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.blog-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: var(--spacing-lg) 0;
+}
+
+.blog-post-content blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: var(--spacing-md);
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: rgba(236, 234, 229, 0.8);
+}
+
+/* Tag cloud */
+.blog-tags {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-tags-title {
+  margin-bottom: var(--spacing-md);
+  color: var(--accent);
+}
+
+.blog-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}

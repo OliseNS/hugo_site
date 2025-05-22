@@ -1,18 +1,16 @@
 {{ define "head_extra" }}
 <link href="{{ "css/timeline.css" | relURL }}" rel="stylesheet">
+<link href="{{ "css/timeline-responsive.css" | relURL }}" rel="stylesheet">
+<link href="{{ "css/now-page.css" | relURL }}" rel="stylesheet">
 {{ end }}
 
 {{ define "main" }}
-<ul class="default-timeline">
-  {{ range .Sections }}
-  <li>
-    <article>
-      <h3>{{ .Title }}</h3>
-      <div class="timeline-content">
-        {{ .Content }}
-      </div>
-    </article>
-  </li>
-  {{ end }}
-</ul>
+<div class="content-width">
+  <header class="page-header mb-4">
+    <h1>{{ .Title }}</h1>
+    <p class="text-muted">Last updated: {{ .Params.updated }}</p>
+  </header>    <article class="now-page">
+      {{ .Content | safeHTML }}
+  </article>
+</div>
 {{ end }}

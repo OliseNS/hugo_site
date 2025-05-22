@@ -1,0 +1,111 @@
+/* 
+ * Responsive CSS File - Hugo Site
+ * This file contains all responsive design styles and media queries
+ */
+
+/* Base mobile-first design is already in other CSS files */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  :root {
+    --font-size-base: 1.1rem;
+  }
+  
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 1.2rem;
+  }
+  
+  .container {
+    max-width: 720px;
+  }
+  
+  /* Header adjustments */
+  .site-header {
+    padding: 1.2rem;
+  }
+  
+  /* Improve spacing for sections */
+  section {
+    padding: 4rem 2rem;
+  }
+  
+  /* Project cards enhancements */
+  .project-card-content {
+    padding: 1.2rem 0.5rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  :root {
+    --font-size-base: 1.25rem;
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  /* Layout adjustments */
+  .grid-2-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Project detail enhancements */
+  .project-detail-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  :root {
+    --font-size-base: 1.3rem;
+  }
+  
+  .container {
+    max-width: 1140px;
+  }
+  
+  /* More breathing room in larger viewports */
+  section {
+    padding: 5rem 3rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    font-size: 12pt;
+    background-color: white;
+    color: black;
+  }
+  
+  .site-header,
+  .site-footer,
+  .nav-controls {
+    display: none;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+}

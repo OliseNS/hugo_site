@@ -1,0 +1,33 @@
+/* 
+ * Variables CSS File - Hugo Site
+ * This file contains all CSS custom properties (variables) used across the site
+ */
+
+:root {
+  /* Colors */
+  --background: #1a170f;
+  --foreground: #eceae5;
+  --accent: #eec35e;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* Typography */
+  --font-family-primary: HEX Franklin, '_font_fallback_875254319143', sans-serif;
+  --font-family-code: 'Fira Code', monospace;
+  --font-size-base: 1.3rem;
+  --line-height: 1.54em;
+  --letter-spacing: -0.01em;
+  
+  /* Sizing & Spacing */
+  --radius: 8px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Effects */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --hover-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
+}
