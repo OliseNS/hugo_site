@@ -1,15 +1,14 @@
-/* Animations for fade-in effects */
-/* Removed .nav-item animation for header */
+/* Refined animations for a more professional look */
 
-/* Enhanced mobile menu animations */
+/* Enhanced mobile menu animations - subtle and clean */
 .dropdown-menu.show {
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.25s ease;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -17,11 +16,22 @@
   }
 }
 
+/* More subtle hover transitions */
 .dropdown-item {
   transform: translateX(0);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease-out;
 }
 
-.dropdown-item:hover {
-  transform: translateX(5px);
+/* Active page highlighting animation */
+.nav-btn.active::after {
+  animation: activeGlow 2s infinite alternate;
+}
+
+@keyframes activeGlow {
+  from {
+    box-shadow: 0 0 2px rgba(238, 195, 94, 0.2);
+  }
+  to {
+    box-shadow: 0 0 5px rgba(238, 195, 94, 0.6);
+  }
 }

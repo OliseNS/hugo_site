@@ -18,6 +18,7 @@
 
   
 <link href="/css/project-cards.css" rel="stylesheet">
+<link href="/css/project-card-link-arrow.css" rel="stylesheet">
 
 </head>
 <body>
@@ -36,15 +37,14 @@
       
       <div class="nav-menu-container d-none d-lg-flex">
         <nav>
-          <ul class="nav-menu">
-            
+          <ul class="nav-menu">            
             
               <li class="nav-item">
                 <a href="/about/" class="nav-btn">About</a>
               </li>
             
               <li class="nav-item">
-                <a href="/projects/" class="nav-btn">Projects</a>
+                <a href="/projects/" class="nav-btn active">Projects</a>
               </li>
             
               <li class="nav-item">
@@ -88,8 +88,7 @@
             <span></span>
           </div>
         </button>
-        
-        
+          
         <ul class="dropdown-menu dropdown-menu-end">
           
             <li>
@@ -97,7 +96,7 @@
             </li>
           
             <li>
-              <a href="/projects/" class="dropdown-item">Projects</a>
+              <a href="/projects/" class="dropdown-item active">Projects</a>
             </li>
           
             <li>
@@ -152,91 +151,65 @@
       <div class="row g-3">
         
           <div class="col-lg-4 col-md-6">
-            <div class="project-card">
-              <div class="project-card-img-container">
-                
-                
+            <a href="/projects/neural-network-analysis/" class="project-card-link-wrapper" style="text-decoration:none;color:inherit;">
+              <div class="project-card">
+                <div class="project-card-img-container">
                   
-                
-                
-                  <img src="/assets/dither_it_epoch_vs_loss_P3.png" class="project-card-img" alt="Neural Network Performance Analysis">
-                
-              </div>
-              <div class="project-card-content">
-                <h3 class="project-card-title">Neural Network Performance Analysis</h3>
-                <div class="project-card-description">Analysis of neural network training performance including loss function behavior and optimization techniques.</div>
-                
-                
-                <div class="project-card-tags">
                   
-                    <span class="project-card-tag">machine-learning</span>
+                    
                   
-                    <span class="project-card-tag">ann</span>
                   
-                    <span class="project-card-tag">data-science</span>
+                    <img src="/assets/dither_it_epoch_vs_loss_P3.png" class="project-card-img" alt="Neural Network Performance Analysis">
                   
                 </div>
-                
-                
-                <div class="project-card-links">
-                  <a href="/projects/neural-network-analysis/" class="project-card-link">
-                    <i class="fas fa-info-circle me-1"></i> Details
-                  </a>
-                  
-                  
-                  <a href="https://github.com/yourusername/nn-performance" class="project-card-link" target="_blank">
-                    <i class="fab fa-github me-1"></i> Source Code
-                  </a>
-                  
+                <div class="project-card-content">
+                  <h3 class="project-card-title">Neural Network Performance Analysis</h3>
+                  <div class="project-card-description">Analysis of neural network training performance including loss function behavior and optimization techniques.</div>
+                  <div class="project-card-links">
+                    
+                    
+                    <span class="project-card-link-text">
+                      <a href="https://github.com/yourusername/nn-performance" target="_blank" style="text-decoration:underline;color:var(--accent);">
+                        Source Code
+                        <svg class="project-card-link-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 13l6-6m0 0H7m6 0v6"/></svg>
+                      </a>
+                    </span>
+                    
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         
           <div class="col-lg-4 col-md-6">
-            <div class="project-card">
-              <div class="project-card-img-container">
-                
-                
+            <a href="/projects/eeg-clustering/" class="project-card-link-wrapper" style="text-decoration:none;color:inherit;">
+              <div class="project-card">
+                <div class="project-card-img-container">
                   
-                
-                
-                  <img src="/assets/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" class="project-card-img" alt="EEG Clustering and Model Evaluation">
-                
-              </div>
-              <div class="project-card-content">
-                <h3 class="project-card-title">EEG Clustering and Model Evaluation</h3>
-                <div class="project-card-description">Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</div>
-                
-                
-                <div class="project-card-tags">
                   
-                    <span class="project-card-tag">data-science</span>
+                    
                   
-                    <span class="project-card-tag">machine-learning</span>
                   
-                    <span class="project-card-tag">eeg</span>
-                  
-                    <span class="project-card-tag">clustering</span>
-                  
-                    <span class="project-card-tag">ann</span>
+                    <img src="/assets/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" class="project-card-img" alt="EEG Clustering and Model Evaluation">
                   
                 </div>
-                
-                
-                <div class="project-card-links">
-                  <a href="/projects/eeg-clustering/" class="project-card-link">
-                    <i class="fas fa-info-circle me-1"></i> Details
-                  </a>
-                  
-                  
-                  <a href="https://github.com/yourusername/eeg-clustering" class="project-card-link" target="_blank">
-                    <i class="fab fa-github me-1"></i> Source Code
-                  </a>
-                  
+                <div class="project-card-content">
+                  <h3 class="project-card-title">EEG Clustering and Model Evaluation</h3>
+                  <div class="project-card-description">Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</div>
+                  <div class="project-card-links">
+                    
+                    
+                    <span class="project-card-link-text">
+                      <a href="https://github.com/yourusername/eeg-clustering" target="_blank" style="text-decoration:underline;color:var(--accent);">
+                        Source Code
+                        <svg class="project-card-link-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 13l6-6m0 0H7m6 0v6"/></svg>
+                      </a>
+                    </span>
+                    
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         
       </div>

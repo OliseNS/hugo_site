@@ -1,0 +1,11 @@
+/* Link icon with arrow for Source Code */
+.project-card-link-arrow {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.25em;
+  width: 1em;
+  height: 1em;
+  stroke: var(--accent, #eec35e);
+  stroke-width: 2;
+  fill: none;
+}

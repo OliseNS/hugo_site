@@ -18,6 +18,11 @@
 
   
 <link href="/css/project-detail.css" rel="stylesheet">
+<link href="/css/blog.css" rel="stylesheet">
+<style>
+.planted i, .watered i { color: var(--accent); }
+.planted, .watered { font-weight: 500; }
+</style>
 
 </head>
 <body>
@@ -36,8 +41,7 @@
       
       <div class="nav-menu-container d-none d-lg-flex">
         <nav>
-          <ul class="nav-menu">
-            
+          <ul class="nav-menu">            
             
               <li class="nav-item">
                 <a href="/about/" class="nav-btn">About</a>
@@ -88,8 +92,7 @@
             <span></span>
           </div>
         </button>
-        
-        
+          
         <ul class="dropdown-menu dropdown-menu-end">
           
             <li>
@@ -139,37 +142,28 @@
 
   <main id="main-content">
     
-<section class="project-detail py-5">
+<section class="project-detail py-5 blog-post">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 mx-auto">
-        <div class="project-header mb-4">
-          <h1 class="project-title mb-3">Neural Network Performance Analysis</h1>
-          
-          
-          <div class="project-tags mb-3">
+      <div class="col-md-10 mx-auto">
+        <div class="blog-post-header mb-4">
+          <h1 class="blog-post-title">Neural Network Performance Analysis</h1>
+          <div class="blog-post-meta">
+            <span class="me-3 planted"><i class="fa fa-seedling me-1"></i>Planted: May 20, 2023</span>
             
-              <a href="/tags/machine-learning" class="project-tag">machine-learning</a>
+            <span class="me-3 watered"><i class="fa fa-tint me-1"></i>Watered: May 20, 2023</span>
             
-              <a href="/tags/ann" class="project-tag">ann</a>
             
-              <a href="/tags/data-science" class="project-tag">data-science</a>
+            <span class="me-3"><i class="fa fa-tags me-1"></i>machine-learning, ann, data-science</span>
             
-          </div>
-          
-          
-          <div class="project-meta text-muted">
-            <span class="me-3"><i class="far fa-calendar me-1"></i>May 20, 2023</span>
           </div>
         </div>
-        
         
         <div class="project-featured-image mb-4">
           <img src="/assets/dither_it_epoch_vs_loss_P3.png" class="img-fluid rounded" alt="Neural Network Performance Analysis" />
         </div>
         
-        
-        <div class="project-content">
+        <div class="blog-post-content">
           <h2 id="project-overview">Project Overview</h2>
 <p>This project examines the performance characteristics of various neural network architectures, focusing on loss function behavior during training, gradient propagation issues, and optimization techniques to improve convergence speed and model accuracy.</p>
 <h2 id="key-features">Key Features</h2>
@@ -194,26 +188,21 @@
 
         </div>
         
-        
         <div class="project-links mt-4">
           <a href="https://github.com/yourusername/nn-performance" class="btn btn-primary" target="_blank">
             <i class="fab fa-github me-2"></i>GitHub Repository
           </a>
           
-          
         </div>
-        
-        
-        <div class="project-navigation mt-5">
+                <div class="project-navigation mt-5">
           <div class="row">
             
             <div class="col-6">
               <a href="/projects/eeg-clustering/" class="project-nav-link prev">
                 <span class="d-block text-muted small"><i class="fas fa-arrow-left me-1"></i>Previous Project</span>
-                EEG Clustering and Model Evaluation
+                <span class="project-nav-link-title">EEG Clustering and Model Evaluation</span>
               </a>
             </div>
-            
             
             
           </div>

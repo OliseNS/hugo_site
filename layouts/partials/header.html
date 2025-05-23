@@ -13,11 +13,10 @@
       <!-- Center Navigation Menu -->
       <div class="nav-menu-container d-none d-lg-flex">
         <nav>
-          <ul class="nav-menu">
-            {{ $currentPage := . }}
+          <ul class="nav-menu">            {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
               <li class="nav-item">
-                <a href="{{ .URL | relURL }}" class="nav-btn{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
+                <a href="{{ .URL | relURL }}" class="nav-btn{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (eq $currentPage.RelPermalink .URL) }} active{{ end }}">{{ .Name }}</a>
               </li>
             {{ end }}
           </ul>
@@ -53,12 +52,11 @@
             <span></span>
           </div>
         </button>
-        
-        <!-- Mobile Dropdown Menu -->
+          <!-- Mobile Dropdown Menu -->
         <ul class="dropdown-menu dropdown-menu-end">
           {{ range .Site.Menus.main }}
             <li>
-              <a href="{{ .URL | relURL }}" class="dropdown-item{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
+              <a href="{{ .URL | relURL }}" class="dropdown-item{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (eq $currentPage.RelPermalink .URL) }} active{{ end }}">{{ .Name }}</a>
             </li>
           {{ end }}
           <li><hr class="dropdown-divider"></li>

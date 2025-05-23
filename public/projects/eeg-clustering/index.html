@@ -18,6 +18,11 @@
 
   
 <link href="/css/project-detail.css" rel="stylesheet">
+<link href="/css/blog.css" rel="stylesheet">
+<style>
+.planted i, .watered i { color: var(--accent); }
+.planted, .watered { font-weight: 500; }
+</style>
 
 </head>
 <body>
@@ -36,8 +41,7 @@
       
       <div class="nav-menu-container d-none d-lg-flex">
         <nav>
-          <ul class="nav-menu">
-            
+          <ul class="nav-menu">            
             
               <li class="nav-item">
                 <a href="/about/" class="nav-btn">About</a>
@@ -88,8 +92,7 @@
             <span></span>
           </div>
         </button>
-        
-        
+          
         <ul class="dropdown-menu dropdown-menu-end">
           
             <li>
@@ -139,41 +142,28 @@
 
   <main id="main-content">
     
-<section class="project-detail py-5">
+<section class="project-detail py-5 blog-post">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 mx-auto">
-        <div class="project-header mb-4">
-          <h1 class="project-title mb-3">EEG Clustering and Model Evaluation</h1>
-          
-          
-          <div class="project-tags mb-3">
+      <div class="col-md-10 mx-auto">
+        <div class="blog-post-header mb-4">
+          <h1 class="blog-post-title">EEG Clustering and Model Evaluation</h1>
+          <div class="blog-post-meta">
+            <span class="me-3 planted"><i class="fa fa-seedling me-1"></i>Planted: April 15, 2023</span>
             
-              <a href="/tags/data-science" class="project-tag">data-science</a>
+            <span class="me-3 watered"><i class="fa fa-tint me-1"></i>Watered: April 15, 2023</span>
             
-              <a href="/tags/machine-learning" class="project-tag">machine-learning</a>
             
-              <a href="/tags/eeg" class="project-tag">eeg</a>
+            <span class="me-3"><i class="fa fa-tags me-1"></i>data-science, machine-learning, eeg, clustering, ann</span>
             
-              <a href="/tags/clustering" class="project-tag">clustering</a>
-            
-              <a href="/tags/ann" class="project-tag">ann</a>
-            
-          </div>
-          
-          
-          <div class="project-meta text-muted">
-            <span class="me-3"><i class="far fa-calendar me-1"></i>April 15, 2023</span>
           </div>
         </div>
-        
         
         <div class="project-featured-image mb-4">
           <img src="/assets/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" class="img-fluid rounded" alt="EEG Clustering and Model Evaluation" />
         </div>
         
-        
-        <div class="project-content">
+        <div class="blog-post-content">
           <h1 id="eeg-clustering-and-model-evaluation">EEG Clustering and Model Evaluation</h1>
 <h2 id="project-overview">Project Overview</h2>
 <p>This project explores electroencephalogram (EEG) feature clustering using KMeans algorithm and evaluates different clustering metrics including cohesion and silhouette scores to determine optimal cluster configurations for brain signal analysis.</p>
@@ -199,25 +189,20 @@
 
         </div>
         
-        
         <div class="project-links mt-4">
           <a href="https://github.com/yourusername/eeg-clustering" class="btn btn-primary" target="_blank">
             <i class="fab fa-github me-2"></i>GitHub Repository
           </a>
           
-          
         </div>
-        
-        
-        <div class="project-navigation mt-5">
+                <div class="project-navigation mt-5">
           <div class="row">
-            
             
             
             <div class="col-6 text-end">
               <a href="/projects/neural-network-analysis/" class="project-nav-link next">
                 <span class="d-block text-muted small">Next Project<i class="fas fa-arrow-right ms-1"></i></span>
-                Neural Network Performance Analysis
+                <span class="project-nav-link-title">Neural Network Performance Analysis</span>
               </a>
             </div>
             

@@ -12,58 +12,49 @@
       <div class="row g-3">
         {{ range $projects }}
           <div class="col-lg-4 col-md-6">
-            <div class="project-card">
-              <div class="project-card-img-container">
-                {{ $image := "" }}
-                {{ if .Params.image }}
-                  {{ $image = .Params.image }}
-                {{ else }}
-                  {{ range (slice "dither_it_1.JPG" "dither_it_epoch_vs_loss_P3.png" "dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png") }}
-                    {{ if eq $image "" }}
-                      {{ $staticPath := printf "/assets/%s" . }}
-                      {{ if (fileExists (printf "static%s" $staticPath)) }}
-                        {{ $image = $staticPath }}
+            <a href="{{ .RelPermalink }}" class="project-card-link-wrapper" style="text-decoration:none;color:inherit;">
+              <div class="project-card">
+                <div class="project-card-img-container">
+                  {{ $image := "" }}
+                  {{ if .Params.image }}
+                    {{ $image = .Params.image }}
+                  {{ else }}
+                    {{ range (slice "dither_it_1.JPG" "dither_it_epoch_vs_loss_P3.png" "dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png") }}
+                      {{ if eq $image "" }}
+                        {{ $staticPath := printf "/assets/%s" . }}
+                        {{ if (fileExists (printf "static%s" $staticPath)) }}
+                          {{ $image = $staticPath }}
+                        {{ end }}
                       {{ end }}
                     {{ end }}
                   {{ end }}
-                {{ end }}
-                {{ if ne $image "" }}
-                  <img src="{{ $image | relURL }}" class="project-card-img" alt="{{ .Title }}">
-                {{ else }}
-                  <div class="project-card-img project-card-img-placeholder">
-                    <i class="fas fa-code fa-3x"></i>
+                  {{ if ne $image "" }}
+                    <img src="{{ $image | relURL }}" class="project-card-img" alt="{{ .Title }}">
+                  {{ else }}
+                    <div class="project-card-img project-card-img-placeholder">
+                      <i class="fas fa-code fa-3x"></i>
+                    </div>
+                  {{ end }}
+                </div>
+                <div class="project-card-content">
+                  <h3 class="project-card-title">{{ .Title }}</h3>
+                  <div class="project-card-description">{{ .Summary }}</div>
+                  <div class="project-card-links">
+                    {{ if .Params.projectUrl }}
+                    <span class="project-card-link-text"><a href="{{ .Params.projectUrl }}" target="_blank" style="text-decoration:underline;color:var(--accent);">View Project</a></span>
+                    {{ end }}
+                    {{ if .Params.githubUrl }}
+                    <span class="project-card-link-text">
+                      <a href="{{ .Params.githubUrl }}" target="_blank" style="text-decoration:underline;color:var(--accent);">
+                        Source Code
+                        <svg class="project-card-link-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 13l6-6m0 0H7m6 0v6"/></svg>
+                      </a>
+                    </span>
+                    {{ end }}
                   </div>
-                {{ end }}
-              </div>
-              <div class="project-card-content">
-                <h3 class="project-card-title">{{ .Title }}</h3>
-                <div class="project-card-description">{{ .Summary }}</div>
-                
-                {{ if .Params.tags }}
-                <div class="project-card-tags">
-                  {{ range .Params.tags }}
-                    <span class="project-card-tag">{{ . }}</span>
-                  {{ end }}
-                </div>
-                {{ end }}
-                
-                <div class="project-card-links">
-                  <a href="{{ .RelPermalink }}" class="project-card-link">
-                    <i class="fas fa-info-circle me-1"></i> Details
-                  </a>
-                  {{ if .Params.projectUrl }}
-                  <a href="{{ .Params.projectUrl }}" class="project-card-link" target="_blank">
-                    <i class="fas fa-external-link-alt me-1"></i> View Project
-                  </a>
-                  {{ end }}
-                  {{ if .Params.githubUrl }}
-                  <a href="{{ .Params.githubUrl }}" class="project-card-link" target="_blank">
-                    <i class="fab fa-github me-1"></i> Source Code
-                  </a>
-                  {{ end }}
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         {{ end }}
       </div>
@@ -80,4 +71,5 @@
 
 {{ define "head_extra" }}
 <link href="{{ "css/project-cards.css" | relURL }}" rel="stylesheet">
+<link href="{{ "css/project-card-link-arrow.css" | relURL }}" rel="stylesheet">
 {{ end }}
