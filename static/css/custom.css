@@ -1,0 +1,20 @@
+/* Custom styles */
+
+/* Footer button hover state */
+.footer .btn-primary {
+    background-color: var(--accent);
+    color: var(--background);
+    transition: var(--transition);
+}
+
+.footer .btn-primary:hover {
+    background-color: #d1a347;
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Footer text styles */
+.footer .text-muted {
+    color: var(--foreground) !important;
+    opacity: 0.8;
+}

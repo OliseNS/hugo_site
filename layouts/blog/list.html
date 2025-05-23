@@ -1,55 +1,109 @@
 {{ define "head_extra" }}
 <!-- Blog styles now included in main.css -->
+<link rel="stylesheet" href="/css/medium-style.css">
 {{ end }}
 
 {{ define "main" }}
 <section class="blog-section">
   <div class="container">
-    <div class="page-header">
-      <h2 class="page-title">Blog</h2>
-      <p class="page-subtitle">Insights, tutorials, and updates</p>
+    <div class="blog-header">
+      <h1 class="blog-main-title">Articles</h1>
+      <p class="blog-subtitle">Personal insights, tutorials, and research in data science and machine learning</p>
     </div>
-    
-    {{ .Content }}
   
     {{ if .Pages }}
-      <div class="row">
-        {{ range .Pages }}
-          <div class="col-lg-6">
-            <article class="blog-card">
-              <div class="blog-card-content">
-                <h3 class="blog-card-title">
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h3>
-                
-                <div class="blog-card-meta">
-                  {{ if .Date }}
-                    <span><i class="fas fa-calendar-alt"></i> {{ .Date.Format "January 2, 2006" }}</span>
-                  {{ end }}
-                  {{ if .Params.author }}
-                    <span><i class="fas fa-user"></i> {{ .Params.author }}</span>
-                  {{ end }}
-                </div>
-                
-                <div class="blog-card-description">
-                  {{ if .Summary }}
-                    {{ .Summary }}
-                  {{ else }}
-                    {{ .Content | truncate 150 }}
-                  {{ end }}
-                </div>
-                
-                <a href="{{ .RelPermalink }}" class="blog-card-link">Read more</a>
+      <div class="blog-featured">
+        {{ range first 1 .Pages.ByDate.Reverse }}
+          <article class="blog-featured-post">
+            {{ if .Params.featured_image }}
+              <div class="featured-image-container">
+                <img src="{{ .Params.featured_image }}" alt="Featured image for {{ .Title }}" class="featured-image">
               </div>
-            </article>
-          </div>
+            {{ end }}
+            <div class="featured-content">
+              <h2 class="featured-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h2>
+              
+              <div class="featured-meta">
+                {{ if .Date }}
+                  <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ end }}
+                {{ if .Params.author }}
+                  <span class="post-author">{{ .Params.author }}</span>
+                {{ end }}
+                <span class="post-read-time">{{ div (countwords .Content) 200 }} min read</span>
+              </div>
+              
+              <div class="featured-description">
+                {{ if .Description }}
+                  {{ .Description }}
+                {{ else }}
+                  {{ .Summary }}
+                {{ end }}
+              </div>
+              
+              {{ if .Params.tags }}
+                <div class="post-tags">
+                  {{ range .Params.tags }}
+                    <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </article>
         {{ end }}
       </div>
-    {{ else }}
-      <div class="empty-card">
-        <i class="fas fa-pen-fancy empty-card-icon"></i>
-        <h4 class="empty-card-title">No Blog Posts Yet</h4>
-        <p class="empty-card-message">I'm currently working on creating valuable content for you. Check back soon for articles, tutorials, and insights!</p>
+
+      <div class="blog-feed">
+        {{ range after 1 .Pages.ByDate.Reverse }}
+          <article class="blog-post-card">
+            <div class="post-card-content">
+              <h3 class="post-card-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h3>
+              
+              <div class="post-card-meta">
+                {{ if .Date }}
+                  <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ end }}
+                {{ if .Params.author }}
+                  <span class="post-author">{{ .Params.author }}</span>
+                {{ end }}
+                <span class="post-read-time">{{ div (countwords .Content) 200 }} min read</span>
+              </div>
+              
+              <div class="post-card-description">
+                {{ if .Description }}
+                  {{ .Description }}
+                {{ else if .Summary }}
+                  {{ .Summary }}
+                {{ else }}
+                  {{ .Content | truncate 150 }}
+                {{ end }}
+              </div>
+              
+              {{ if .Params.tags }}
+                <div class="post-tags">
+                  {{ range first 3 .Params.tags }}
+                    <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+            
+            {{ if .Params.featured_image }}
+              <div class="post-card-image">
+                <img src="{{ .Params.featured_image }}" alt="Image for {{ .Title }}">
+              </div>
+            {{ end }}
+          </article>
+        {{ end }}
+      </div>    {{ else }}
+      <div class="no-posts">
+        <div class="no-posts-icon">✍️</div>
+        <h3 class="no-posts-title">Coming Soon</h3>
+        <p class="no-posts-message">New articles are in the works. Stay tuned for insightful content!</p>
       </div>
     {{ end }}
   </div>

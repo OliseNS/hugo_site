@@ -1,48 +1,61 @@
 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content bg-dark">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title" id="contactModalLabel">Get in Touch</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <!-- Form Container -->
         <div id="form-container">
-          <form id="contact-form">
-            <label for="full-name">Full Name</label>
-            <input 
-              type="text" 
-              id="full-name" 
-              name="entry.298308065" 
-              placeholder="Enter your full name" 
-              required 
-            />
+          <form id="contact-form" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="full-name" class="form-label">Full Name</label>
+              <input 
+                type="text" 
+                class="form-control bg-dark text-light border-secondary" 
+                id="full-name" 
+                name="entry.298308065" 
+                placeholder="Enter your full name" 
+                required 
+              />
+            </div>
       
-            <label for="email">Email Address</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="entry.1392201790" 
-              placeholder="Enter your email address" 
-              required 
-            />
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input 
+                type="email" 
+                class="form-control bg-dark text-light border-secondary" 
+                id="email" 
+                name="entry.1392201790" 
+                placeholder="Enter your email address" 
+                required 
+              />
+            </div>
       
-            <label for="message">Message</label>
-            <textarea 
-              id="message" 
-              name="entry.100297225" 
-              rows="5" 
-              placeholder="Write your message here" 
-              required
-            ></textarea>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea 
+                class="form-control bg-dark text-light border-secondary" 
+                id="message" 
+                name="entry.100297225" 
+                rows="5" 
+                placeholder="Write your message here" 
+                required
+              ></textarea>
+            </div>
       
-            <button type="submit" id="submit-button">Submit</button>
+            <button type="submit" id="submit-button" class="btn btn-outline-light w-100">
+              Send Message
+              <i class="fa-regular fa-paper-plane ms-2"></i>
+            </button>
           </form>
         </div>
         <!-- Thank You Message -->
-        <div id="thank-you-message" style="display: none; text-align: center; color: white;">
-          <p>Thank you! I'll get back to you as soon as possible.</p>
-          <p id="cooldown-timer"></p>
+        <div id="thank-you-message" style="display: none;" class="text-center py-4">
+          <i class="fa-regular fa-circle-check text-success mb-3" style="font-size: 3rem;"></i>
+          <p class="mb-2">Thank you! I'll get back to you as soon as possible.</p>
+          <p id="cooldown-timer" class="text-muted"></p>
         </div>
       </div>
     </div>

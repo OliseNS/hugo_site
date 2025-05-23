@@ -1,8 +1,5 @@
 ---
 title: "Blog"
 layout: "blog"
+description: "Insights, tutorials and articles on data science, machine learning, and programming"
 ---
-
-## Blog
-
-Welcome to the blog section. Installation guides and other posts will appear here soon!
