@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header{{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }} blog-header-bg{{ end }}">
   <!-- Include the new CSS file for navigation animations -->
   <link rel="stylesheet" href="/css/nav-animations.css">
   <div class="container-fluid">

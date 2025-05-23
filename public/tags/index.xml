@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Olisemeka Nmarkwe</title>
-    <link>/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on Olisemeka Nmarkwe</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 May 2025 09:30:00 -0500</lastBuildDate>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data-Science</title>
-      <link>/tags/data-science/</link>
+      <link>//localhost:1313/tags/data-science/</link>
       <pubDate>Tue, 20 May 2025 09:30:00 -0500</pubDate>
-      <guid>/tags/data-science/</guid>
+      <guid>//localhost:1313/tags/data-science/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine-Learning</title>
-      <link>/tags/machine-learning/</link>
+      <link>//localhost:1313/tags/machine-learning/</link>
       <pubDate>Tue, 20 May 2025 09:30:00 -0500</pubDate>
-      <guid>/tags/machine-learning/</guid>
+      <guid>//localhost:1313/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Neural-Networks</title>
-      <link>/tags/neural-networks/</link>
+      <link>//localhost:1313/tags/neural-networks/</link>
       <pubDate>Tue, 20 May 2025 09:30:00 -0500</pubDate>
-      <guid>/tags/neural-networks/</guid>
+      <guid>//localhost:1313/tags/neural-networks/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>/tags/python/</link>
+      <link>//localhost:1313/tags/python/</link>
       <pubDate>Tue, 20 May 2025 09:30:00 -0500</pubDate>
-      <guid>/tags/python/</guid>
+      <guid>//localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Deep-Learning</title>
-      <link>/tags/deep-learning/</link>
+      <link>//localhost:1313/tags/deep-learning/</link>
       <pubDate>Thu, 15 May 2025 14:20:00 -0500</pubDate>
-      <guid>/tags/deep-learning/</guid>
+      <guid>//localhost:1313/tags/deep-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Ann</title>
-      <link>/tags/ann/</link>
+      <link>//localhost:1313/tags/ann/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/ann/</guid>
+      <guid>//localhost:1313/tags/ann/</guid>
       <description></description>
     </item>
     <item>
       <title>Clustering</title>
-      <link>/tags/clustering/</link>
+      <link>//localhost:1313/tags/clustering/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/clustering/</guid>
+      <guid>//localhost:1313/tags/clustering/</guid>
       <description></description>
     </item>
     <item>
       <title>Eeg</title>
-      <link>/tags/eeg/</link>
+      <link>//localhost:1313/tags/eeg/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/eeg/</guid>
+      <guid>//localhost:1313/tags/eeg/</guid>
       <description></description>
     </item>
   </channel>

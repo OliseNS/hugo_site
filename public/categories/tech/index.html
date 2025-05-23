@@ -17,17 +17,44 @@
   <link href="/css/main.css" rel="stylesheet">
 
   
-<link href="/css/timeline.css" rel="stylesheet">
-<link href="/css/timeline-responsive.css" rel="stylesheet">
-<link href="/css/now-page.css" rel="stylesheet">
-<link href="/css/components.css" rel="stylesheet">
-<link href="/css/components-modern.css" rel="stylesheet">
-<link href="/css/custom.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="/js/now-page.js" defer></script>
+
+<link rel="stylesheet" href="/css/medium-style.css">
+<link rel="stylesheet" href="/css/taxonomy.css">
+<style>
+   
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
+  
+  .post-tag {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: var(--sans-font);
+    transition: background-color 0.2s ease;
+  }
+  
+  .post-tag:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .blog-section {
+    background-color: #092643;
+    padding: 2rem 0;
+  }
+</style>
 
 </head>
-<body>
+<body>  
   <header class="site-header">
   
   <link rel="stylesheet" href="/css/nav-animations.css">
@@ -141,50 +168,106 @@
 
 <script src="/js/header-animations.js"></script>
 
+  
 
   <main id="main-content">
     
-<div class="container mt-5">
-  
-  
-    <div class="row mt-4">
-      
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title"><a href="/blog/data-science-journey/">My Journey into Data Science: From Novice to Practitioner</a></h5>
-              <p class="card-text"><h2 id="the-beginning-of-my-data-science-journey">The Beginning of My Data Science Journey</h2>
-<p>My fascination with data science began during my sophomore year of college. After taking an introductory statistics course, I realized the immense potential of extracting meaningful insights from data. What started as curiosity quickly evolved into passion as I delved deeper into this fascinating field.</p>
-<p>The learning curve was steep at first. Programming in Python, understanding statistical concepts, and grasping machine learning algorithms all at once felt overwhelming. However, the satisfaction of creating my first predictive model—a simple linear regression to predict housing prices—was incredibly rewarding.</p></p>
-            </div>
-            <div class="card-footer bg-transparent border-0">
-              <a href="/blog/data-science-journey/" class="btn btn-sm btn-primary">Read more</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title"><a href="/blog/neural-networks-guide/">Understanding Neural Networks: A Practical Guide</a></h5>
-              <p class="card-text"><h2 id="introduction-to-neural-networks">Introduction to Neural Networks</h2>
-<p>Neural networks have revolutionized machine learning and artificial intelligence, enabling breakthroughs in image recognition, natural language processing, and many other fields. Despite their impressive capabilities, understanding the fundamental concepts behind neural networks isn&rsquo;t as complicated as it might seem.</p>
-<p>In this guide, I&rsquo;ll walk you through the core principles of neural networks in a way that&rsquo;s accessible to anyone with basic programming knowledge.</p>
-<h2 id="the-building-blocks-neurons-and-layers">The Building Blocks: Neurons and Layers</h2>
-<h3 id="the-artificial-neuron">The Artificial Neuron</h3>
-<p>At the heart of every neural network is the artificial neuron, inspired by biological neurons in our brains. Each artificial neuron:</p></p>
-            </div>
-            <div class="card-footer bg-transparent border-0">
-              <a href="/blog/neural-networks-guide/" class="btn btn-sm btn-primary">Read more</a>
-            </div>
-          </div>
-        </div>
-      
+<section class="blog-section">
+  <div class="container">
+    <div class="taxonomy-header">
+      <h1 class="taxonomy-title">Tech</h1>
+      <p class="taxonomy-description">Articles tagged with "Tech"</p>
     </div>
-  
-  
-  
-</div>
+
+    
+      <div class="blog-feed">
+        
+          <article class="blog-post-card">
+            
+              <div class="post-card-image">
+                <img src="/assets/dither_it_1.JPG" alt="Image for My Journey into Data Science: From Novice to Practitioner">
+              </div>
+            
+            
+            <div class="post-card-content">
+              <h3 class="post-card-title">
+                <a href="/blog/data-science-journey/">My Journey into Data Science: From Novice to Practitioner</a>
+              </h3>
+              
+              <div class="post-card-meta">
+                
+                  <span class="post-date">May 20, 2025</span>
+                
+                
+                  <span class="post-author">Olisemeka Nmarkwe</span>
+                
+                <span class="post-read-time">2 min read</span>
+              </div>
+              
+              <div class="post-card-description">
+                
+                  A personal reflection on learning data science, overcoming challenges, and building meaningful projects.
+                
+              </div>
+                
+                <div class="post-tags">
+                  
+                    <a href="/tags/data-science" class="post-tag">data-science</a>
+                  
+                    <a href="/tags/machine-learning" class="post-tag">machine-learning</a>
+                  
+                    <a href="/tags/python" class="post-tag">python</a>
+                  
+                </div>
+              
+            </div>
+          </article>
+        
+          <article class="blog-post-card">
+            
+              <div class="post-card-image">
+                <img src="/assets/dither_it_epoch_vs_loss_P3.png" alt="Image for Understanding Neural Networks: A Practical Guide">
+              </div>
+            
+            
+            <div class="post-card-content">
+              <h3 class="post-card-title">
+                <a href="/blog/neural-networks-guide/">Understanding Neural Networks: A Practical Guide</a>
+              </h3>
+              
+              <div class="post-card-meta">
+                
+                  <span class="post-date">May 15, 2025</span>
+                
+                
+                  <span class="post-author">Olisemeka Nmarkwe</span>
+                
+                <span class="post-read-time">3 min read</span>
+              </div>
+              
+              <div class="post-card-description">
+                
+                  A comprehensive guide to neural networks for beginners, covering key concepts, architectures, and practical implementations.
+                
+              </div>
+                
+                <div class="post-tags">
+                  
+                    <a href="/tags/neural-networks" class="post-tag">neural-networks</a>
+                  
+                    <a href="/tags/machine-learning" class="post-tag">machine-learning</a>
+                  
+                    <a href="/tags/deep-learning" class="post-tag">deep-learning</a>
+                  
+                </div>
+              
+            </div>
+          </article>
+        
+      </div>
+    
+  </div>
+</section>
 
   </main>
 
@@ -214,8 +297,7 @@
       <div class="modal-body">
         
         <div id="form-container">
-          <form id="contact-form" class="needs-validation" novalidate>
-            <div class="mb-3">
+          <form id="contact-form" class="needs-validation" novalidate>            <div class="mb-3">
               <label for="full-name" class="form-label">Full Name</label>
               <input 
                 type="text" 
@@ -249,17 +331,15 @@
                 placeholder="Write your message here" 
                 required
               ></textarea>
-            </div>
-      
-            <button type="submit" id="submit-button" class="btn btn-outline-light w-100">
+            </div>            <button type="submit" id="submit-button" class="btn btn-outline-light w-100">
               Send Message
               <i class="fa-regular fa-paper-plane ms-2"></i>
             </button>
           </form>
         </div>
         
-        <div id="thank-you-message" style="display: none;" class="text-center py-4">
-          <i class="fa-regular fa-circle-check text-success mb-3" style="font-size: 3rem;"></i>
+        <div id="thank-you-message" class="text-center py-4 thank-you-hidden">
+          <i class="fa-regular fa-circle-check text-success mb-3 thank-you-icon"></i>
           <p class="mb-2">Thank you! I'll get back to you as soon as possible.</p>
           <p id="cooldown-timer" class="text-muted"></p>
         </div>
@@ -300,9 +380,7 @@
             .catch(() => {
                 alert('There was an error submitting the form. Please try again later.');
             });
-        }
-
-        function showThankYouMessage() {
+        }        function showThankYouMessage() {
             const formContainer = document.getElementById('form-container');
             const thankYouMessage = document.getElementById('thank-you-message');
             const cooldownTimer = document.getElementById('cooldown-timer');
@@ -310,8 +388,8 @@
             let timeLeft = cooldownDuration;
 
             
-            if(formContainer) formContainer.style.display = "none";
-            if(thankYouMessage) thankYouMessage.style.display = "block";
+            if(formContainer) formContainer.classList.add('thank-you-hidden');
+            if(thankYouMessage) thankYouMessage.classList.remove('thank-you-hidden');
 
             
             cooldown = true;
@@ -322,8 +400,8 @@
                     clearInterval(countdown);
                     cooldown = false;
                     if(cooldownTimer) cooldownTimer.textContent = "";
-                    if(thankYouMessage) thankYouMessage.style.display = "none";
-                    if(formContainer) formContainer.style.display = "block"; 
+                    if(thankYouMessage) thankYouMessage.classList.add('thank-you-hidden');
+                    if(formContainer) formContainer.classList.remove('thank-you-hidden'); 
                 }
             }, 1000);
         }

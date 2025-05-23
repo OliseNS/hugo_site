@@ -1,9 +1,13 @@
 {{ define "head_extra" }}
 <link rel="stylesheet" href="/css/medium-style.css">
+<link rel="stylesheet" href="/css/banner.css">
 <script src="/js/toc.js" defer></script>
 {{ end }}
 
 {{ define "main" }}
+<a href="javascript:history.back()" aria-label="Go Back" class="back-button">
+  <img src="/assets/banner.png" alt="Go Back" class="home-banner">
+</a>
 <div class="article-container">
   <div class="article-header">
     <div class="container">
@@ -86,14 +90,27 @@
               </a>
             </div>
           </div>
-          
-          <div class="article-author-bio">
+            <div class="article-author-bio">
             <div class="author-image">
               <img src="/assets/dither_it_1.JPG" alt="{{ .Params.author }}" />
             </div>
             <div class="author-info">
               <h4>{{ .Params.author }}</h4>
-              <p>Computer science student passionate about data science and machine learning. Follow me for more articles on programming, data analysis, and AI.</p>
+              <p>Computer science student passionate about data science and machine learning. Specialized in neural networks and EEG signal analysis, focusing on the intersection of AI and neuroscience.</p>
+              <div class="author-social-links">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="GitHub Profile">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="LinkedIn Profile">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="Twitter Profile">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:youremail@example.com" class="author-social-link" aria-label="Email">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

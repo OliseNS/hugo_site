@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Neural-Networks on Olisemeka Nmarkwe</title>
-    <link>/tags/neural-networks/</link>
+    <link>//localhost:1313/tags/neural-networks/</link>
     <description>Recent content in Neural-Networks on Olisemeka Nmarkwe</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 May 2025 09:30:00 -0500</lastBuildDate>
-    <atom:link href="/tags/neural-networks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/neural-networks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Journey into Data Science: From Novice to Practitioner</title>
-      <link>/blog/data-science-journey/</link>
+      <link>//localhost:1313/blog/data-science-journey/</link>
       <pubDate>Tue, 20 May 2025 09:30:00 -0500</pubDate>
-      <guid>/blog/data-science-journey/</guid>
+      <guid>//localhost:1313/blog/data-science-journey/</guid>
       <description>&lt;h2 id=&#34;the-beginning-of-my-data-science-journey&#34;&gt;The Beginning of My Data Science Journey&lt;/h2&gt;&#xA;&lt;p&gt;My fascination with data science began during my sophomore year of college. After taking an introductory statistics course, I realized the immense potential of extracting meaningful insights from data. What started as curiosity quickly evolved into passion as I delved deeper into this fascinating field.&lt;/p&gt;&#xA;&lt;p&gt;The learning curve was steep at first. Programming in Python, understanding statistical concepts, and grasping machine learning algorithms all at once felt overwhelming. However, the satisfaction of creating my first predictive model—a simple linear regression to predict housing prices—was incredibly rewarding.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Neural Networks: A Practical Guide</title>
-      <link>/blog/neural-networks-guide/</link>
+      <link>//localhost:1313/blog/neural-networks-guide/</link>
       <pubDate>Thu, 15 May 2025 14:20:00 -0500</pubDate>
-      <guid>/blog/neural-networks-guide/</guid>
+      <guid>//localhost:1313/blog/neural-networks-guide/</guid>
       <description>&lt;h2 id=&#34;introduction-to-neural-networks&#34;&gt;Introduction to Neural Networks&lt;/h2&gt;&#xA;&lt;p&gt;Neural networks have revolutionized machine learning and artificial intelligence, enabling breakthroughs in image recognition, natural language processing, and many other fields. Despite their impressive capabilities, understanding the fundamental concepts behind neural networks isn&amp;rsquo;t as complicated as it might seem.&lt;/p&gt;&#xA;&lt;p&gt;In this guide, I&amp;rsquo;ll walk you through the core principles of neural networks in a way that&amp;rsquo;s accessible to anyone with basic programming knowledge.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-building-blocks-neurons-and-layers&#34;&gt;The Building Blocks: Neurons and Layers&lt;/h2&gt;&#xA;&lt;h3 id=&#34;the-artificial-neuron&#34;&gt;The Artificial Neuron&lt;/h3&gt;&#xA;&lt;p&gt;At the heart of every neural network is the artificial neuron, inspired by biological neurons in our brains. Each artificial neuron:&lt;/p&gt;</description>
     </item>
   </channel>

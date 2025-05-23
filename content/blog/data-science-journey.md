@@ -5,6 +5,7 @@ draft: false
 author: "Olisemeka Nmarkwe"
 description: "A personal reflection on learning data science, overcoming challenges, and building meaningful projects."
 featured_image: "/assets/dither_it_1.JPG"
+featured: true
 tags: ["data-science", "machine-learning", "python", "neural-networks"]
 categories: ["Personal", "Tech"]
 toc: true

@@ -20,16 +20,6 @@
   position: relative;
 }
 
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--hover-shadow);
-  border-color: var(--accent);
-}
-
-.blog-card:hover::after {
-  opacity: 1;
-}
-
 .blog-card::after {
   content: '';
   position: absolute;
@@ -39,7 +29,6 @@
   height: 4px;
   background: linear-gradient(90deg, var(--accent), #d1a347);
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .blog-card-content {
@@ -93,10 +82,6 @@
   text-decoration: none;
   font-weight: 500;
   transition: var(--transition);
-}
-
-.blog-card-link:hover {
-  gap: calc(var(--spacing-xs) + 5px);
 }
 
 /* Single Blog Post */
@@ -175,4 +160,73 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-xs);
+}
+
+/* css for featured posts */
+.featured-section {
+  margin-bottom: 3rem;
+}
+
+.featured-section-title {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.featured-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--accent), #d1a347);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(90deg, var(--accent), #d1a347);
+  color: #000;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 3px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.featured-home {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.featured-home-title {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.featured-home-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--accent), #d1a347);
+}
+
+.featured-blog-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
 }

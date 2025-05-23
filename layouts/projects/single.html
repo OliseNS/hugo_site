@@ -1,4 +1,17 @@
+{{ define "head_extra" }}
+<link rel="stylesheet" href="/css/banner.css">
+<link href="{{ "css/project-detail.css" | relURL }}" rel="stylesheet">
+<link href="{{ "css/blog.css" | relURL }}" rel="stylesheet">
+<style>
+.planted i, .watered i { color: var(--accent); }
+.planted, .watered { font-weight: 500; }
+</style>
+{{ end }}
+
 {{ define "main" }}
+<a href="javascript:history.back()" aria-label="Go Back" class="back-button">
+  <img src="/assets/banner.png" alt="Go Back" class="home-banner">
+</a>
 <section class="project-detail py-5 blog-post">
   <div class="container">
     <div class="row">
@@ -58,13 +71,4 @@
     </div>
   </div>
 </section>
-{{ end }}
-
-{{ define "head_extra" }}
-<link href="{{ "css/project-detail.css" | relURL }}" rel="stylesheet">
-<link href="{{ "css/blog.css" | relURL }}" rel="stylesheet">
-<style>
-.planted i, .watered i { color: var(--accent); }
-.planted, .watered { font-weight: 500; }
-</style>
 {{ end }}

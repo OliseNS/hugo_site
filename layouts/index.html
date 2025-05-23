@@ -1,74 +1,126 @@
 {{ define "main" }}
-<section>
-  <div class="container mt-0" id="me">
-    <div class="home-hero-row">
-      <div>
-        <img src="{{ "assets/dither_it_1.JPG" | relURL }}" alt="Olisemeka Nmarkwe" class="home-hero-image">
-        <div class="hello-box" id="hello-message">Hello</div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-image-container">
+        <img src="{{ "assets/dither_it_1.JPG" | relURL }}" alt="Olisemeka Nmarkwe" class="profile-image">
+        <div class="hello-indicator">
+          <span class="hello-text">Ndewo</span>
+        </div>
       </div>
-      <div class="home-hero-text">
-        <p class="introduction-text">
-          <strong><a href="{{ "/about/" | relURL }}">{{ .Site.Params.author.name | default "Olisemeka Nmarkwe" }}</a></strong> {{ .Site.Params.author.tagline | default "is a motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript, Olisemeka is seeking a data science or software engineering internship to apply these skills and gain valuable industry experience." | markdownify }}
+      <div class="hero-text">
+        <h1 class="hero-name">{{ .Site.Params.author.name | default "Olisemeka Nmarkwe" }}</h1>
+        <p class="hero-description">
+          {{ .Site.Params.author.tagline | default "Motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript." | markdownify }}
         </p>
-        <a href="{{ "assets/Olisemeka_Resume_V1_0.pdf" | relURL }}" class="btn btn-dark btn-download-resume" download>
-          <i class="fas fa-download"></i> Download Resume
-        </a>
+        <div class="hero-actions">
+          <a href="{{ "assets/OlisemekaV3Resume.pdf" | relURL }}" class="btn-primary" download>
+            <span>Download Resume</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="container py-5">
-  <h2 class="text-center mb-5">Skills & Tools</h2>
-  <div class="row">
-    <!-- Sidebar Navigation -->
-    <div class="col-12 col-md-4">
-      <div id="skills-tools-nav" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-        <a class="p-1 rounded" href="#programming-languages">Programming Languages</a>
-        <a class="p-1 rounded" href="#technical-skills">Technical Skills</a>
-        <a class="p-1 rounded" href="#tools">Tools</a>
-        <a class="p-1 rounded" href="#modeling-techniques">Modeling Techniques</a>
-      </div>
+<!-- Skills Section -->
+<section class="skills-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Expertise</h2>
     </div>
-
-    <!-- Content -->
-    <div class="col-12 col-md-8">
-      <div data-bs-spy="scroll" data-bs-target="#skills-tools-nav" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-        <!-- Programming Languages -->
-        <h4 id="programming-languages">Programming Languages</h4>
-        <ul>
+    <div class="skills-container">
+      <div class="skills-category">
+        <h3 class="skills-category-title">Programming</h3>
+        <div class="skills-grid">
           {{ range .Site.Params.skills.programming_languages }}
-            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="{{ .icon }}"></i>
+              </div>
+              <span class="skill-name">{{ .name }}</span>
+            </div>
           {{ end }}
-        </ul>
-
-        <!-- Technical Skills -->
-        <h4 id="technical-skills">Technical Skills</h4>
-        <ul>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3 class="skills-category-title">Technical Skills</h3>
+        <div class="skills-grid">
           {{ range .Site.Params.skills.technical_skills }}
-            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="{{ .icon }}"></i>
+              </div>
+              <span class="skill-name">{{ .name }}</span>
+            </div>
           {{ end }}
-        </ul>
-
-        <!-- Tools -->
-        <h4 id="tools">Tools</h4>
-        <ul>
-          {{ range .Site.Params.skills.tools }}
-            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
-          {{ end }}
-        </ul>
-
-        <!-- Modeling Techniques -->
-        <h4 id="modeling-techniques">Modeling Techniques</h4>
-        <ul>
-          {{ range .Site.Params.skills.modeling_techniques }}
-            <li><i class="{{ .icon }} skill-icon"></i>{{ .name }}</li>
-          {{ end }}
-        </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- Featured Posts Section -->
+<section class="featured-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Work</h2>
+      <p class="section-subtitle">Recent thoughts and projects</p>
+    </div>
+    
+    {{ $featuredPosts := where (where .Site.RegularPages "Section" "blog") "Params.featured" true }}
+    {{ if gt (len $featuredPosts) 0 }}
+      <div class="featured-grid">
+        {{ range first 3 $featuredPosts.ByDate.Reverse }}
+          <article class="featured-card">
+            {{ if .Params.featured_image }}
+              <div class="featured-image">
+                <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" loading="lazy">
+              </div>
+            {{ end }}
+            
+            <div class="featured-content">
+              <div class="featured-meta">
+                {{ if .Date }}
+                  <time class="featured-date">{{ .Date.Format "Jan 2, 2006" }}</time>
+                {{ end }}
+                <span class="featured-read-time">{{ div (countwords .Content) 200 }} min read</span>
+              </div>
+              
+              <h3 class="featured-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h3>
+              
+              <p class="featured-excerpt">
+                {{ if .Description }}
+                  {{ .Description }}
+                {{ else }}
+                  {{ .Summary | truncate 120 }}
+                {{ end }}
+              </p>
+              
+              {{ if .Params.tags }}
+                <div class="featured-tags">
+                  {{ range first 2 .Params.tags }}
+                    <span class="featured-tag">{{ . }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ else }}
+      <div class="empty-state">
+        <div class="empty-icon">✨</div>
+        <h3 class="empty-title">New content coming soon</h3>
+        <p class="empty-message">Stay tuned for insightful articles and project updates.</p>
+      </div>
+    {{ end }}
+  </div>
+</section>
 {{ end }}
 
 {{ define "scripts_extra" }}

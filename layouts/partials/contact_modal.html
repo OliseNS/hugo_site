@@ -1,19 +1,18 @@
 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content bg-dark text-light">
-      <div class="modal-header border-secondary">
+    <div class="modal-content {{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }}blog-modal-bg{{ else }}bg-dark{{ end }} text-light">
+      <div class="modal-header {{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }}border-blog{{ else }}border-secondary{{ end }}">
         <h5 class="modal-title" id="contactModalLabel">Get in Touch</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <!-- Form Container -->
         <div id="form-container">
-          <form id="contact-form" class="needs-validation" novalidate>
-            <div class="mb-3">
+          <form id="contact-form" class="needs-validation" novalidate>            <div class="mb-3">
               <label for="full-name" class="form-label">Full Name</label>
               <input 
                 type="text" 
-                class="form-control bg-dark text-light border-secondary" 
+                class="form-control {{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }}blog-form-control{{ else }}bg-dark text-light border-secondary{{ end }}" 
                 id="full-name" 
                 name="entry.298308065" 
                 placeholder="Enter your full name" 
@@ -25,7 +24,7 @@
               <label for="email" class="form-label">Email Address</label>
               <input 
                 type="email" 
-                class="form-control bg-dark text-light border-secondary" 
+                class="form-control {{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }}blog-form-control{{ else }}bg-dark text-light border-secondary{{ end }}" 
                 id="email" 
                 name="entry.1392201790" 
                 placeholder="Enter your email address" 
@@ -36,24 +35,22 @@
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
               <textarea 
-                class="form-control bg-dark text-light border-secondary" 
+                class="form-control {{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }}blog-form-control{{ else }}bg-dark text-light border-secondary{{ end }}" 
                 id="message" 
                 name="entry.100297225" 
                 rows="5" 
                 placeholder="Write your message here" 
                 required
               ></textarea>
-            </div>
-      
-            <button type="submit" id="submit-button" class="btn btn-outline-light w-100">
+            </div>            <button type="submit" id="submit-button" class="btn {{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }}btn-outline-light blog-button{{ else }}btn-outline-light{{ end }} w-100">
               Send Message
               <i class="fa-regular fa-paper-plane ms-2"></i>
             </button>
           </form>
         </div>
         <!-- Thank You Message -->
-        <div id="thank-you-message" style="display: none;" class="text-center py-4">
-          <i class="fa-regular fa-circle-check text-success mb-3" style="font-size: 3rem;"></i>
+        <div id="thank-you-message" class="text-center py-4 thank-you-hidden">
+          <i class="fa-regular fa-circle-check text-success mb-3 thank-you-icon"></i>
           <p class="mb-2">Thank you! I'll get back to you as soon as possible.</p>
           <p id="cooldown-timer" class="text-muted"></p>
         </div>
@@ -94,9 +91,7 @@
             .catch(() => {
                 alert('There was an error submitting the form. Please try again later.');
             });
-        }
-
-        function showThankYouMessage() {
+        }        function showThankYouMessage() {
             const formContainer = document.getElementById('form-container');
             const thankYouMessage = document.getElementById('thank-you-message');
             const cooldownTimer = document.getElementById('cooldown-timer');
@@ -104,8 +99,8 @@
             let timeLeft = cooldownDuration;
 
             // Hide form and show thank-you message
-            if(formContainer) formContainer.style.display = "none";
-            if(thankYouMessage) thankYouMessage.style.display = "block";
+            if(formContainer) formContainer.classList.add('thank-you-hidden');
+            if(thankYouMessage) thankYouMessage.classList.remove('thank-you-hidden');
 
             // Start cooldown timer
             cooldown = true;
@@ -116,8 +111,8 @@
                     clearInterval(countdown);
                     cooldown = false;
                     if(cooldownTimer) cooldownTimer.textContent = "";
-                    if(thankYouMessage) thankYouMessage.style.display = "none";
-                    if(formContainer) formContainer.style.display = "block"; // Show the form again
+                    if(thankYouMessage) thankYouMessage.classList.add('thank-you-hidden');
+                    if(formContainer) formContainer.classList.remove('thank-you-hidden'); // Show the form again
                 }
             }, 1000);
         }

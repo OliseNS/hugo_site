@@ -5,6 +5,7 @@ draft: false
 author: "Olisemeka Nmarkwe"
 description: "A comprehensive guide to neural networks for beginners, covering key concepts, architectures, and practical implementations."
 featured_image: "/assets/dither_it_epoch_vs_loss_P3.png"
+featured: false
 tags: ["neural-networks", "machine-learning", "deep-learning", "python"]
 categories: ["Tech"]
 toc: true

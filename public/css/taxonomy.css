@@ -1,0 +1,308 @@
+/* Taxonomy Pages (Tags and Categories) */
+.taxonomy-header {
+  text-align: left;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.taxonomy-title {
+  font-family: var(--serif-font);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.taxonomy-description {
+  font-family: var(--sans-font);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Taxonomy Terms Grid */
+.taxonomy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.taxonomy-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.taxonomy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.taxonomy-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.taxonomy-card-header {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.taxonomy-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.taxonomy-card-count {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.taxonomy-card-image {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.taxonomy-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.taxonomy-card:hover .taxonomy-card-image img {
+  transform: scale(1.05);
+}
+
+.taxonomy-card-no-image {
+  background: linear-gradient(135deg, #256EB5, #092643);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.taxonomy-placeholder-image {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.taxonomy-card-preview {
+  padding: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.taxonomy-preview-title {
+  font-weight: 500;
+}
+
+.taxonomy-preview-separator {
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* No terms/content placeholders */
+.no-terms, .no-posts {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  margin: 2rem 0;
+}
+
+.no-terms-icon, .no-posts-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.no-terms-title, .no-posts-title {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.no-terms-message, .no-posts-message {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Post Card Improvements for Taxonomy Pages */
+.post-card-no-image {
+  background: linear-gradient(135deg, #256EB5, #092643);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-image {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+/* Ensure tag styles are consistently applied */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+
+.post-tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: var(--sans-font);
+  transition: background-color 0.2s ease;
+}
+
+.post-tag:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Ensure blog-feed and blog-post-card styles are correctly applied */
+.blog-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.blog-post-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .blog-post-card {
+    grid-template-columns: 230px 1fr;
+  }
+}
+
+.blog-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.post-card-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover .post-card-image img {
+  transform: scale(1.05);
+}
+
+.post-card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-title {
+  font-family: var(--serif-font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.post-card-title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.post-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.post-card-description {
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .taxonomy-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  
+  .taxonomy-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .taxonomy-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .taxonomy-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .taxonomy-card-count {
+    align-self: flex-start;
+  }
+}

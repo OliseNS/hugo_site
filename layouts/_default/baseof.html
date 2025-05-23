@@ -18,8 +18,9 @@
 
   {{ block "head_extra" . }}{{ end }}
 </head>
-<body>
+<body>  {{ if not (or (and (eq .Type "blog") (eq .Kind "page")) (and (eq .Type "projects") (eq .Kind "page"))) }}
   {{ partial "header.html" . }}
+  {{ end }}
 
   <main id="main-content">
     {{ block "main" . }}{{ end }}

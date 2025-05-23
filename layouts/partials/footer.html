@@ -1,4 +1,4 @@
-<footer class="footer py-3 mt-auto">
+<footer class="footer py-3 mt-auto{{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }} blog-footer-bg{{ end }}">
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-md-6 text-center text-md-start">

@@ -1,11 +1,49 @@
 {{ define "head_extra" }}
-<!-- Blog styles now included in main.css -->
+<!-- Use the same blog styles plus specific taxonomy styles -->
 <link rel="stylesheet" href="/css/medium-style.css">
+<link rel="stylesheet" href="/css/taxonomy.css">
+<style>
+  /* Additional overrides to ensure tags are styled consistently */
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
+  
+  .post-tag {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: var(--sans-font);
+    transition: background-color 0.2s ease;
+  }
+  
+  .post-tag:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .blog-section {
+    background-color: #092643;
+    padding: 2rem 0;
+  }
+</style>
 {{ end }}
 
 {{ define "main" }}
 <section class="blog-section">
   <div class="container">
+    <div class="taxonomy-header">
+      <h1 class="taxonomy-title">{{ .Title }}</h1>
+      <p class="taxonomy-description">Articles tagged with "{{ .Title }}"</p>
+    </div>
+
     {{ if .Pages }}
       <div class="blog-feed">
         {{ range .Pages.ByDate.Reverse }}
@@ -13,6 +51,10 @@
             {{ if .Params.featured_image }}
               <div class="post-card-image">
                 <img src="{{ .Params.featured_image }}" alt="Image for {{ .Title }}">
+              </div>
+            {{ else }}
+              <div class="post-card-image post-card-no-image">
+                <div class="placeholder-image">{{ substr .Title 0 1 }}</div>
               </div>
             {{ end }}
             
@@ -40,22 +82,22 @@
                   {{ .Content | truncate 150 }}
                 {{ end }}
               </div>
-              
-              {{ if .Params.tags }}
+                {{ if .Params.tags }}
                 <div class="post-tags">
                   {{ range first 3 .Params.tags }}
                     <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
                   {{ end }}
                 </div>
               {{ end }}
-            </div>          </article>
+            </div>
+          </article>
         {{ end }}
       </div>
     {{ else }}
       <div class="no-posts">
-        <div class="no-posts-icon">✍️</div>
-        <h3 class="no-posts-title">Coming Soon</h3>
-        <p class="no-posts-message">New articles are in the works. Stay tuned for insightful content!</p>
+        <div class="no-posts-icon">📑</div>
+        <h3 class="no-posts-title">No Articles Yet</h3>
+        <p class="no-posts-message">There are no articles in this category yet. Check back soon!</p>
       </div>
     {{ end }}
   </div>
