@@ -83,16 +83,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Handle window resize
+      // Handle window resize
+    let resizeHandler;
     window.addEventListener('resize', function() {
         if (window.innerWidth <= 1024) {
-            tocHeading.addEventListener('click', function() {
-                tocWrapper.classList.toggle('collapsed');
-            });
+            if (!tocWrapper.classList.contains('mobile-toc-enabled')) {
+                tocWrapper.classList.add('mobile-toc-enabled');
+                if (tocHeading && !resizeHandler) {
+                    resizeHandler = function() {
+                        tocWrapper.classList.toggle('collapsed');
+                    };
+                    tocHeading.addEventListener('click', resizeHandler);
+                }
+            }
         } else {
-            tocWrapper.classList.remove('collapsed');
-            tocHeading.removeEventListener('click', function() {});
+            tocWrapper.classList.remove('collapsed', 'mobile-toc-enabled');
+            if (tocHeading && resizeHandler) {
+                tocHeading.removeEventListener('click', resizeHandler);
+                resizeHandler = null;
+            }
         }
     });
 });

@@ -1,24 +1,26 @@
 {{ define "main" }}
-<!-- Minimalist Homepage -->
-<div class="homepage-container">  <!-- Header Image -->
+<!-- Modern Minimalist Homepage -->
+<div class="homepage-container">
+  <!-- Header Image Section -->
   <div class="header-image-section">
-    <img src="{{ "assets/header.png" | relURL }}" alt="Olisemeka Nmarkwe" class="header-image">
+    <img src="{{ "assets/header.png" | relURL }}" alt="Olisemeka Nmarkwe - Computer Science Student" class="header-image">
   </div>
   
-  <!-- Changing Hello Text -->
+  <!-- Hello Section with Dynamic Text -->
   <div class="hello-section">
     <h1 class="hello-text">
       <span id="hello-message">Hello</span> I'm Olisemeka
     </h1>
   </div>
   
-  <!-- About Me and Resume -->
+  <!-- About Me Section -->
   <div class="about-section">
     <p class="about-description">
       {{ .Site.Params.author.tagline | default "Motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript." | markdownify }}
     </p>
     <div class="resume-section">
       <a href="{{ "assets/OlisemekaV3Resume.pdf" | relURL }}" class="resume-link" download>
+        <i class="fas fa-download" aria-hidden="true"></i>
         Download Resume
       </a>
     </div>
@@ -26,34 +28,32 @@
 </div>
 
 <!-- Skills Section -->
-<div class="skills-section">
-  <h2 class="section-title">Skills</h2>
+<section class="skills-section">
+  <h2 class="section-title">Skills & Technologies</h2>
   <div class="skills-container">
     {{ range .Site.Params.skills.programming_languages }}
-      <div class="skill-item">{{ .name }}</div>
+      <span class="skill-item">{{ .name }}</span>
     {{ end }}
     {{ range .Site.Params.skills.technical_skills }}
-      <div class="skill-item">{{ .name }}</div>
+      <span class="skill-item">{{ .name }}</span>
     {{ end }}
     {{ range .Site.Params.skills.tools }}
-      <div class="skill-item">{{ .name }}</div>
+      <span class="skill-item">{{ .name }}</span>
     {{ end }}
     {{ range .Site.Params.skills.modeling_techniques }}
-      <div class="skill-item">{{ .name }}</div>
+      <span class="skill-item">{{ .name }}</span>
     {{ end }}
   </div>
-</div>
+</section>
 
-<!-- Projects Section -->
-<div class="projects-section">
-  <h2 class="section-title">Projects</h2>
+<!-- Featured Projects Section -->
+<section class="projects-section">
+  <h2 class="section-title">Featured Projects</h2>
   <div class="projects-container">
     {{ $projects := where .Site.RegularPages "Section" "projects" }}
     {{ range $projects }}
-      <div class="project-item">
-        <h3 class="project-title">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h3>
+      <a href="{{ .RelPermalink }}" class="project-item">
+        <h3 class="project-title">{{ .Title }}</h3>
         <p class="project-description">
           {{ if .Description }}
             {{ .Description }}
@@ -61,9 +61,9 @@
             {{ .Summary | truncate 120 }}
           {{ end }}
         </p>
-      </div>
+      </a>
     {{ end }}
   </div>
-</div>
+</section>
 
 {{ end }}

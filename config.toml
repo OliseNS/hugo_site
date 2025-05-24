@@ -1,6 +1,10 @@
-baseURL = "/"
+baseURL = "https://yourdomain.com"
 languageCode = "en-us"
 title = "Olisemeka Nmarkwe"
+
+# Hugo configuration for better deployment
+relativeURLs = false
+canonifyURLs = false
 
 [params]
   description = "Personal website of Olisemeka Nmarkwe, a computer science student passionate about data analysis and machine learning."

@@ -1,105 +1,71 @@
-{{ define "head_extra" }}
-<!-- Use the same blog styles plus specific taxonomy styles -->
-<link rel="stylesheet" href="/css/medium-style.css">
-<link rel="stylesheet" href="/css/taxonomy.css">
-<style>
-  /* Additional overrides to ensure tags are styled consistently */
-  .post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 0.3rem;
-  }
-  
-  .post-tag {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    font-size: 0.7rem;
-    padding: 0.15rem 0.5rem;
-    margin-right: 0.3rem;
-    margin-bottom: 0.3rem;
-    border-radius: 100px;
-    text-decoration: none;
-    font-family: var(--sans-font);
-    transition: background-color 0.2s ease;
-  }
-  
-  .post-tag:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .blog-section {
-    background-color: #092643;
-    padding: 2rem 0;
-  }
-</style>
-{{ end }}
-
 {{ define "main" }}
-<section class="blog-section">
-  <div class="container">
-    <div class="taxonomy-header">
-      <h1 class="taxonomy-title">{{ .Title }}</h1>
-      <p class="taxonomy-description">Articles tagged with "{{ .Title }}"</p>
+<main class="main-content">
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">{{ .Title }}</h1>
+      <p class="page-subtitle">Articles tagged with "{{ .Title }}"</p>
     </div>
-
-    {{ if .Pages }}
-      <div class="blog-feed">
-        {{ range .Pages.ByDate.Reverse }}
-          <article class="blog-post-card">
-            {{ if .Params.featured_image }}
-              <div class="post-card-image">
-                <img src="{{ .Params.featured_image }}" alt="Image for {{ .Title }}">
-              </div>
-            {{ else }}
-              <div class="post-card-image post-card-no-image">
-                <div class="placeholder-image">{{ substr .Title 0 1 }}</div>
-              </div>
-            {{ end }}
-            
-            <div class="post-card-content">
-              <h3 class="post-card-title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </h3>
-              
-              <div class="post-card-meta">
-                {{ if .Date }}
-                  <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-                {{ end }}
-                {{ if .Params.author }}
-                  <span class="post-author">{{ .Params.author }}</span>
-                {{ end }}
-                <span class="post-read-time">{{ div (countwords .Content) 200 }} min read</span>
-              </div>
-              
-              <div class="post-card-description">
-                {{ if .Description }}
-                  {{ .Description }}
-                {{ else if .Summary }}
-                  {{ .Summary }}
-                {{ else }}
-                  {{ .Content | truncate 150 }}
-                {{ end }}
-              </div>
-                {{ if .Params.tags }}
-                <div class="post-tags">
-                  {{ range first 3 .Params.tags }}
-                    <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
-                  {{ end }}
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      {{ if .Pages }}
+        <div class="blog-grid">
+          {{ range .Pages.ByDate.Reverse }}
+            <article class="blog-card">
+              {{ if .Params.featured_image }}
+                <div class="blog-image">
+                  <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" loading="lazy">
                 </div>
               {{ end }}
-            </div>
-          </article>
-        {{ end }}
-      </div>
-    {{ else }}
-      <div class="no-posts">
-        <div class="no-posts-icon">📑</div>
-        <h3 class="no-posts-title">No Articles Yet</h3>
-        <p class="no-posts-message">There are no articles in this category yet. Check back soon!</p>
-      </div>
-    {{ end }}
-  </div>
-</section>
+              
+              <div class="blog-content">
+                <header class="blog-header">
+                  <h2 class="blog-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </h2>
+                  
+                  <div class="blog-meta">
+                    {{ if .Date }}
+                      <time class="blog-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format "Jan 2, 2006" }}
+                      </time>
+                    {{ end }}
+                    <span class="blog-read-time">{{ div (countwords .Content) 200 }} min read</span>
+                  </div>
+                </header>
+                
+                <div class="blog-description">
+                  {{ if .Description }}
+                    {{ .Description }}
+                  {{ else if .Summary }}
+                    {{ .Summary }}
+                  {{ else }}
+                    {{ .Content | truncate 150 }}
+                  {{ end }}
+                </div>
+                
+                {{ if .Params.tags }}
+                  <div class="blog-tags">
+                    {{ range first 3 .Params.tags }}
+                      <span class="blog-tag">{{ . }}</span>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="empty-state">
+          <div class="empty-icon">
+            <i class="fas fa-file-alt" aria-hidden="true"></i>
+          </div>
+          <h3 class="empty-title">No Articles Yet</h3>
+          <p class="empty-message">There are no articles in this category yet. Check back soon!</p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+</main>
 {{ end }}

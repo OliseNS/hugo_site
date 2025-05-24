@@ -1,15 +1,7 @@
-<footer class="footer py-3 mt-auto{{ if or (eq .Section "blog") (and (eq .Type "page") (eq .Section "blog")) }} blog-footer-bg{{ end }}">
-  <div class="container">
-    <div class="row justify-content-between align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <button class="btn btn-primary btn-lg shadow-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
-          <i class="fa-regular fa-comment me-2"></i>Send a Message
-        </button>
-      </div>
-      <div class="col-md-6 text-center text-md-end text-muted small mt-3 mt-md-0">
-        Built with <a href="https://gohugo.io" class="text-decoration-none" target="_blank">HUGO</a> by Olisemeka
-      </div>
-    </div>
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> by {{ .Site.Params.author.name | default "Olisemeka" }}
+    </p>
   </div>
-  <link rel="stylesheet" href="/css/custom.css">
 </footer>

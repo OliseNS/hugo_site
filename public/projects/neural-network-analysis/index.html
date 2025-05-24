@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=3000&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neural Network Performance Analysis | Olisemeka Nmarkwe</title>
@@ -11,17 +11,17 @@
   
   
   <meta property="og:type" content="article">
-  <meta property="og:url" content="//localhost:1313/projects/neural-network-analysis/">
+  <meta property="og:url" content="http://localhost:3000/projects/neural-network-analysis/">
   <meta property="og:title" content="Neural Network Performance Analysis | Olisemeka Nmarkwe">
   <meta property="og:description" content="Personal website of Olisemeka Nmarkwe, a computer science student passionate about data analysis and machine learning.">
-  <meta property="og:image" content="//localhost:1313/assets/dither_it_1.JPG">
+  <meta property="og:image" content="http://localhost:3000/assets/dither_it_1.JPG">
   
   
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="//localhost:1313/projects/neural-network-analysis/">
+  <meta property="twitter:url" content="http://localhost:3000/projects/neural-network-analysis/">
   <meta property="twitter:title" content="Neural Network Performance Analysis | Olisemeka Nmarkwe">
   <meta property="twitter:description" content="Personal website of Olisemeka Nmarkwe, a computer science student passionate about data analysis and machine learning.">
-  <meta property="twitter:image" content="//localhost:1313/assets/dither_it_1.JPG">
+  <meta property="twitter:image" content="http://localhost:3000/assets/dither_it_1.JPG">
   
   
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
@@ -30,58 +30,61 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   
-
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
+  
+  <link href="/css/modern-minimal.css" rel="stylesheet">
 
   
-  <link href="/css/main.css" rel="stylesheet">
-
-  
-<link rel="stylesheet" href="/css/banner.css">
-<link href="/css/project-detail.css" rel="stylesheet">
-<link href="/css/blog.css" rel="stylesheet">
-<style>
-.planted i, .watered i { color: var(--accent); }
-.planted, .watered { font-weight: 500; }
-</style>
-
 </head>
 <body>  
 
   <main id="main-content">
     
-<a href="javascript:history.back()" aria-label="Go Back" class="back-button">
-  <img src="/assets/banner.png" alt="Go Back" class="home-banner">
-</a>
-<section class="project-detail py-5 blog-post">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 mx-auto">
-        <div class="blog-post-header mb-4">
-          <h1 class="blog-post-title">Neural Network Performance Analysis</h1>
-          <div class="blog-post-meta">
-            <span class="me-3 planted"><i class="fa fa-seedling me-1"></i>Planted: May 20, 2023</span>
-            
-            <span class="me-3 watered"><i class="fa fa-tint me-1"></i>Watered: May 20, 2023</span>
-            
-            
-            <span class="me-3"><i class="fa fa-tags me-1"></i>machine-learning, ann, data-science</span>
-            
+<main class="main-content">
+  <nav class="back-navigation">
+    <div class="container">
+      <a href="javascript:history.back()" class="back-link" aria-label="Go back to previous page">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span>Back</span>
+      </a>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <div class="container">
+      <header class="project-header">
+        <h1 class="project-title">Neural Network Performance Analysis</h1>
+        
+        <div class="project-meta">
+          <div class="meta-item">
+            <i class="fas fa-seedling" aria-hidden="true"></i>
+            <span>Planted May 20, 2023</span>
           </div>
+          
+          <div class="meta-item">
+            <i class="fas fa-tint" aria-hidden="true"></i>
+            <span>Watered May 20, 2023</span>
+          </div>
+          
+          
+          <div class="meta-item">
+            <i class="fas fa-tags" aria-hidden="true"></i>
+            <span>machine-learning, ann, data-science</span>
+          </div>
+          
         </div>
-        
-        <div class="project-featured-image mb-4">
-          <img src="/assets/dither_it_epoch_vs_loss_P3.png" class="img-fluid rounded" alt="Neural Network Performance Analysis" />
-        </div>
-        
-        <div class="blog-post-content">
-          <h2 id="project-overview">Project Overview</h2>
+      </header>
+
+      
+      <div class="project-featured-image">
+        <img src="/assets/dither_it_epoch_vs_loss_P3.png" alt="Neural Network Performance Analysis" loading="lazy">
+      </div>
+      
+
+      <div class="project-content">
+        <h2 id="project-overview">Project Overview</h2>
 <p>This project examines the performance characteristics of various neural network architectures, focusing on loss function behavior during training, gradient propagation issues, and optimization techniques to improve convergence speed and model accuracy.</p>
 <h2 id="key-features">Key Features</h2>
 <ul>
@@ -103,48 +106,44 @@
 <h2 id="future-work">Future Work</h2>
 <p>Future research will focus on incorporating second-order optimization methods and exploring the relationship between network initialization strategies and convergence behavior.</p>
 
-        </div>
-        
-        <div class="project-links mt-4">
-          <a href="https://github.com/yourusername/nn-performance" class="btn btn-primary" target="_blank">
-            <i class="fab fa-github me-2"></i>GitHub Repository
-          </a>
-          
-        </div>
-                <div class="project-navigation mt-5">
-          <div class="row">
-            
-            <div class="col-6">
-              <a href="/projects/eeg-clustering/" class="project-nav-link prev">
-                <span class="d-block text-muted small"><i class="fas fa-arrow-left me-1"></i>Previous Project</span>
-                <span class="project-nav-link-title">EEG Clustering and Model Evaluation</span>
-              </a>
-            </div>
-            
-            
-          </div>
-        </div>
       </div>
+
+      
+      <div class="project-actions">
+        
+        <a href="https://github.com/yourusername/nn-performance" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span>GitHub Repository</span>
+        </a>
+        
+        
+      </div>
+      
+
+      <nav class="project-navigation" aria-label="Project navigation">
+        
+        <a href="/projects/eeg-clustering/" class="nav-link nav-prev">
+          <div class="nav-direction">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            <span>Previous Project</span>
+          </div>
+          <div class="nav-title">EEG Clustering and Model Evaluation</div>
+        </a>
+        
+        
+        
+      </nav>
     </div>
-  </div>
-</section>
+  </article>
+</main>
 
   </main>
-
-  <footer class="footer py-3 mt-auto">
-  <div class="container">
-    <div class="row justify-content-between align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <button class="btn btn-primary btn-lg shadow-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
-          <i class="fa-regular fa-comment me-2"></i>Send a Message
-        </button>
-      </div>
-      <div class="col-md-6 text-center text-md-end text-muted small mt-3 mt-md-0">
-        Built with <a href="https://gohugo.io" class="text-decoration-none" target="_blank">HUGO</a> by Olisemeka
-      </div>
-    </div>
+  <footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> by Olisemeka Nmarkwe
+    </p>
   </div>
-  <link rel="stylesheet" href="/css/custom.css">
 </footer>
 
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -269,8 +268,8 @@
     }
   });
 </script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
   
   <script src="/js/header-animations.js"></script>
   

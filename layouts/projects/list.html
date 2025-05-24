@@ -1,20 +1,23 @@
 {{ define "main" }}
-<section id="projects" class="projects py-5">
-  <div class="container">
-    <div class="page-header">
-      <h2 class="page-title">Projects</h2>
+<main class="main-content">
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">Projects</h1>
       <p class="page-subtitle">Explore my recent work and contributions</p>
     </div>
-    
-    {{ .Content }}
-    
-    {{ $projects := .Pages }}    {{ if $projects }}
-      <div class="row g-3">
-        {{ range $projects }}
-          <div class="col-lg-4 col-md-6">
-            <a href="{{ .RelPermalink }}" class="project-card-link-wrapper" style="text-decoration:none;color:inherit;">
-              <div class="project-card">
-                <div class="project-card-img-container">
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      {{ .Content }}
+      
+      {{ $projects := .Pages }}
+      {{ if $projects }}
+        <div class="projects-grid">
+          {{ range $projects }}
+            <article class="project-card">
+              <a href="{{ .RelPermalink }}" class="project-link" aria-label="View {{ .Title }} project">
+                <div class="project-image">
                   {{ $image := "" }}
                   {{ if .Params.image }}
                     {{ $image = .Params.image }}
@@ -29,47 +32,47 @@
                     {{ end }}
                   {{ end }}
                   {{ if ne $image "" }}
-                    <img src="{{ $image | relURL }}" class="project-card-img" alt="{{ .Title }}">
+                    <img src="{{ $image | relURL }}" alt="{{ .Title }}" loading="lazy">
                   {{ else }}
-                    <div class="project-card-img project-card-img-placeholder">
-                      <i class="fas fa-code fa-3x"></i>
+                    <div class="project-placeholder">
+                      <i class="fas fa-code" aria-hidden="true"></i>
                     </div>
                   {{ end }}
                 </div>
-                <div class="project-card-content">
-                  <h3 class="project-card-title">{{ .Title }}</h3>
-                  <div class="project-card-description">{{ .Summary }}</div>
-                  <div class="project-card-links">
+                
+                <div class="project-content">
+                  <h2 class="project-title">{{ .Title }}</h2>
+                  <p class="project-description">{{ .Summary }}</p>
+                  
+                  <div class="project-links">
                     {{ if .Params.projectUrl }}
-                    <span class="project-card-link-text"><a href="{{ .Params.projectUrl }}" target="_blank" style="text-decoration:underline;color:var(--accent);">View Project</a></span>
+                      <span class="project-link-item">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        View Project
+                      </span>
                     {{ end }}
                     {{ if .Params.githubUrl }}
-                    <span class="project-card-link-text">
-                      <a href="{{ .Params.githubUrl }}" target="_blank" style="text-decoration:underline;color:var(--accent);">
+                      <span class="project-link-item">
+                        <i class="fab fa-github" aria-hidden="true"></i>
                         Source Code
-                        <svg class="project-card-link-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 13l6-6m0 0H7m6 0v6"/></svg>
-                      </a>
-                    </span>
+                      </span>
                     {{ end }}
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </article>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="empty-state">
+          <div class="empty-icon">
+            <i class="fas fa-tools" aria-hidden="true"></i>
           </div>
-        {{ end }}
-      </div>
-    {{ else }}
-      <div class="empty-card">
-        <i class="fas fa-tools empty-card-icon"></i>
-        <h4 class="empty-card-title">Projects Coming Soon</h4>
-        <p class="empty-card-message">I'm working on documenting my projects and will add them here soon. Check back later to see my portfolio!</p>
-      </div>
-    {{ end }}
-  </div>
-</section>
-{{ end }}
-
-{{ define "head_extra" }}
-<link href="{{ "css/project-cards.css" | relURL }}" rel="stylesheet">
-<link href="{{ "css/project-card-link-arrow.css" | relURL }}" rel="stylesheet">
+          <h3 class="empty-title">Projects Coming Soon</h3>
+          <p class="empty-message">I'm working on documenting my projects and will add them here soon. Check back later to see my portfolio!</p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+</main>
 {{ end }}

@@ -33,17 +33,11 @@
   <link rel="preload" href="{{ "assets/header.png" | relURL }}" as="image">
   <link rel="preload" href="{{ "css/home-minimal.css" | relURL }}" as="style">
   {{ end }}
-
-  <!-- Bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
-
-  <!-- Custom Styles -->
-  <link href="{{ "css/main.css" | relURL }}" rel="stylesheet">
+  
+  <!-- Modern Minimal CSS - Complete Design System -->
+  <link href="{{ "css/modern-minimal.css" | relURL }}" rel="stylesheet">
 
   {{ block "head_extra" . }}{{ end }}
 </head>
@@ -54,10 +48,9 @@
   <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
-
   {{ partial "footer.html" . }}
-  {{ partial "contact_modal.html" . }}  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  {{ partial "contact_modal.html" . }}
+
   <!-- Custom JS -->
   <script src="{{ "js/header-animations.js" | relURL }}"></script>
   {{ if .IsHome }}

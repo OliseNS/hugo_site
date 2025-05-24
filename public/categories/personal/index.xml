@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal on Olisemeka Nmarkwe</title>
-    <link>//localhost:1313/categories/personal/</link>
+    <link>http://localhost:3000/categories/personal/</link>
     <description>Recent content in Personal on Olisemeka Nmarkwe</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 May 2025 09:30:00 -0500</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:3000/categories/personal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Journey into Data Science: From Novice to Practitioner</title>
-      <link>//localhost:1313/blog/data-science-journey/</link>
+      <link>http://localhost:3000/blog/data-science-journey/</link>
       <pubDate>Tue, 20 May 2025 09:30:00 -0500</pubDate>
-      <guid>//localhost:1313/blog/data-science-journey/</guid>
+      <guid>http://localhost:3000/blog/data-science-journey/</guid>
       <description>&lt;h2 id=&#34;the-beginning-of-my-data-science-journey&#34;&gt;The Beginning of My Data Science Journey&lt;/h2&gt;&#xA;&lt;p&gt;My fascination with data science began during my sophomore year of college. After taking an introductory statistics course, I realized the immense potential of extracting meaningful insights from data. What started as curiosity quickly evolved into passion as I delved deeper into this fascinating field.&lt;/p&gt;&#xA;&lt;p&gt;The learning curve was steep at first. Programming in Python, understanding statistical concepts, and grasping machine learning algorithms all at once felt overwhelming. However, the satisfaction of creating my first predictive model—a simple linear regression to predict housing prices—was incredibly rewarding.&lt;/p&gt;</description>
     </item>
   </channel>

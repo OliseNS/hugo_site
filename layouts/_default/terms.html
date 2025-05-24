@@ -1,92 +1,60 @@
-{{ define "head_extra" }}
-<!-- Use the same blog styles plus specific taxonomy styles -->
-<link rel="stylesheet" href="/css/medium-style.css">
-<link rel="stylesheet" href="/css/taxonomy.css">
-<style>
-  /* Additional overrides to ensure consistent styling */
-  .blog-section {
-    background-color: #092643;
-    padding: 2rem 0;
-  }
-  
-  /* Ensure tag styles are consistently applied */
-  .post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 0.3rem;
-  }
-  
-  .post-tag {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    font-size: 0.7rem;
-    padding: 0.15rem 0.5rem;
-    margin-right: 0.3rem;
-    margin-bottom: 0.3rem;
-    border-radius: 100px;
-    text-decoration: none;
-    font-family: var(--sans-font);
-    transition: background-color 0.2s ease;
-  }
-  
-  .post-tag:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    text-decoration: none;
-  }
-</style>
-{{ end }}
-
 {{ define "main" }}
-<section class="blog-section">
-  <div class="container">
-    <div class="taxonomy-header">
-      <h1 class="taxonomy-title">{{ .Title }}</h1>
-      <p class="taxonomy-description">Browse all {{ .Title | lower }}</p>
+<main class="main-content">
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">{{ .Title }}</h1>
+      <p class="page-subtitle">Browse all {{ .Title | lower }}</p>
     </div>
-
-    {{ if .Data.Terms }}
-      <div class="taxonomy-grid">
-        {{ range .Data.Terms.ByCount }}
-          <article class="taxonomy-card">
-            <a href="{{ .Page.RelPermalink }}" class="taxonomy-card-link">
-              <div class="taxonomy-card-header">
-                <h3 class="taxonomy-card-title">{{ .Page.Title }}</h3>
-                <span class="taxonomy-card-count">{{ .Count }} article{{ if gt .Count 1 }}s{{ end }}</span>
-              </div>
-              
-              {{ $firstPage := index .Pages 0 }}
-              {{ if $firstPage.Params.featured_image }}
-                <div class="taxonomy-card-image">
-                  <img src="{{ $firstPage.Params.featured_image }}" alt="Image for {{ .Page.Title }}">
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      {{ if .Data.Terms }}
+        <div class="taxonomy-grid">
+          {{ range .Data.Terms.ByCount }}
+            <article class="taxonomy-card">
+              <a href="{{ .Page.RelPermalink }}" class="taxonomy-link">
+                <div class="taxonomy-header">
+                  <h3 class="taxonomy-title">{{ .Page.Title }}</h3>
+                  <span class="taxonomy-count">{{ .Count }} article{{ if gt .Count 1 }}s{{ end }}</span>
                 </div>
-              {{ else }}
-                <div class="taxonomy-card-image taxonomy-card-no-image">
-                  <div class="taxonomy-placeholder-image">{{ substr .Page.Title 0 1 }}</div>
-                </div>
-              {{ end }}
-                <div class="taxonomy-card-preview">
-                {{ $pageCount := len .Pages }}
-                {{ $counter := 0 }}
-                {{ range first 3 .Pages }}
-                  {{ $counter = add $counter 1 }}
-                  <span class="taxonomy-preview-title">{{ .Title }}</span>
-                  {{ if and (lt $counter 3) (lt $counter $pageCount) }}
-                    <span class="taxonomy-preview-separator">•</span>
-                  {{ end }}
+                
+                {{ $firstPage := index .Pages 0 }}
+                {{ if $firstPage.Params.featured_image }}
+                  <div class="taxonomy-image">
+                    <img src="{{ $firstPage.Params.featured_image }}" alt="{{ .Page.Title }}" loading="lazy">
+                  </div>
+                {{ else }}
+                  <div class="taxonomy-placeholder">
+                    <span class="taxonomy-initial">{{ substr .Page.Title 0 1 }}</span>
+                  </div>
                 {{ end }}
-              </div>
-            </a>
-          </article>
-        {{ end }}
-      </div>
-    {{ else }}
-      <div class="no-terms">
-        <div class="no-terms-icon">🏷️</div>
-        <h3 class="no-terms-title">No {{ .Title }} Yet</h3>
-        <p class="no-terms-message">There are no {{ .Title | lower }} available yet. Check back soon!</p>
-      </div>
-    {{ end }}
-  </div>
-</section>
+                
+                <div class="taxonomy-preview">
+                  {{ $pageCount := len .Pages }}
+                  {{ $counter := 0 }}
+                  {{ range first 3 .Pages }}
+                    {{ $counter = add $counter 1 }}
+                    <span class="preview-title">{{ .Title }}</span>
+                    {{ if and (lt $counter 3) (lt $counter $pageCount) }}
+                      <span class="preview-separator">•</span>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </a>
+            </article>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="empty-state">
+          <div class="empty-icon">
+            <i class="fas fa-tags" aria-hidden="true"></i>
+          </div>
+          <h3 class="empty-title">No {{ .Title }} Yet</h3>
+          <p class="empty-message">There are no {{ .Title | lower }} available yet. Check back soon!</p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+</main>
 {{ end }}

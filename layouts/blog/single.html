@@ -1,121 +1,153 @@
-{{ define "head_extra" }}
-<link rel="stylesheet" href="/css/medium-style.css">
-<link rel="stylesheet" href="/css/banner.css">
-<script src="/js/toc.js" defer></script>
-{{ end }}
-
 {{ define "main" }}
-<a href="javascript:history.back()" aria-label="Go Back" class="back-button">
-  <img src="/assets/banner.png" alt="Go Back" class="home-banner">
-</a>
-<div class="article-container">
-  <div class="article-header">
+<main class="main-content">
+  <nav class="back-navigation">
     <div class="container">
-      <h1 class="article-title">{{ .Title }}</h1>
-      
-      <div class="article-meta">
-        {{ if .Date }}
-          <span class="article-date">{{ .Date.Format "January 2, 2006" }}</span>
-        {{ end }}
-        {{ if .Params.author }}
-          <span class="article-author">{{ .Params.author }}</span>
-        {{ end }}
-        <span class="article-read-time">{{ div (countwords .Content) 200 }} min read</span>
-      </div>
+      <a href="javascript:history.back()" class="back-link" aria-label="Go back to previous page">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span>Back</span>
+      </a>
+    </div>
+  </nav>
 
-      {{ if .Params.tags }}
-        <div class="article-tags">
-          {{ range .Params.tags }}
-            <a href="/tags/{{ . | urlize }}" class="article-tag">{{ . }}</a>
+  <article class="blog-article">
+    <div class="container">
+      <header class="article-header">
+        <h1 class="article-title">{{ .Title }}</h1>
+        
+        <div class="article-meta">
+          {{ if .Date }}
+            <div class="meta-item">
+              <i class="fas fa-calendar" aria-hidden="true"></i>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            </div>
+          {{ end }}
+          <div class="meta-item">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span>{{ div (countwords .Content) 200 }} min read</span>
+          </div>
+          {{ if .Params.author }}
+            <div class="meta-item">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span>{{ .Params.author }}</span>
+            </div>
           {{ end }}
         </div>
-      {{ end }}
-      
+
+        {{ if .Params.tags }}
+          <div class="article-tags">
+            {{ range .Params.tags }}
+              <span class="article-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </header>
+
       {{ if .Params.featured_image }}
         <div class="article-featured-image">
-          <img src="{{ .Params.featured_image }}" alt="Featured image for {{ .Title }}">
+          <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" loading="lazy">
         </div>
       {{ end }}
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="article-content-wrapper">
-      <aside class="article-sidebar">
+      <div class="article-layout">
         {{ if .Params.toc }}
-          <div class="table-of-contents">
-            <h4>Table of Contents</h4>
-            <div id="toc-container"></div>
-          </div>
+          <aside class="article-sidebar">
+            <div class="table-of-contents">
+              <h4>Table of Contents</h4>
+              <div id="toc-container"></div>
+            </div>
+          </aside>
         {{ end }}
-      </aside>
-      
-      <article class="article-content">
-        {{ .Content }}
-          <div class="article-footer">
-          {{ if .Params.categories }}
-            <div class="article-categories">
-              <span>Posted in:</span>
+        
+        <div class="article-content">
+          {{ .Content }}
+        </div>
+      </div>
+
+      <footer class="article-footer">
+        {{ if .Params.categories }}
+          <div class="article-categories">
+            <span class="label">Posted in:</span>
+            <div class="categories-list">
               {{ range .Params.categories }}
-                <a href="/categories/{{ . | urlize }}">{{ . }}</a>
+                <a href="/categories/{{ . | urlize }}" class="category-link">{{ . }}</a>
               {{ end }}
             </div>
-          {{ end }}
-          
-          {{ if .Params.tags }}
-            <div class="article-tags-footer">
-              <span>Tags:</span>
-              <div class="tags-container">
-                {{ range .Params.tags }}
-                  <a href="/tags/{{ . | urlize }}" class="article-tag">{{ . }}</a>
-                {{ end }}
-              </div>
-            </div>
-          {{ end }}
-          
-          <div class="article-share">
-            <h4>Share this article</h4>
-            <div class="share-buttons">
-              <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="share-twitter" aria-label="Share on Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="share-linkedin" aria-label="Share on LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="share-facebook" aria-label="Share on Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="mailto:?subject={{ .Title }}&body=Check out this article: {{ .Permalink }}" class="share-email" aria-label="Share via Email">
-                <i class="fas fa-envelope"></i>
-              </a>
+          </div>
+        {{ end }}
+        
+        {{ if .Params.tags }}
+          <div class="article-tags-footer">
+            <span class="label">Tags:</span>
+            <div class="tags-list">
+              {{ range .Params.tags }}
+                <a href="/tags/{{ . | urlize }}" class="tag-link">{{ . }}</a>
+              {{ end }}
             </div>
           </div>
-            <div class="article-author-bio">
-            <div class="author-image">
-              <img src="/assets/dither_it_1.JPG" alt="{{ .Params.author }}" />
-            </div>
-            <div class="author-info">
-              <h4>{{ .Params.author }}</h4>
-              <p>Computer science student passionate about data science and machine learning. Specialized in neural networks and EEG signal analysis, focusing on the intersection of AI and neuroscience.</p>
-              <div class="author-social-links">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="GitHub Profile">
-                  <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="LinkedIn Profile">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="Twitter Profile">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="mailto:youremail@example.com" class="author-social-link" aria-label="Email">
-                  <i class="fas fa-envelope"></i>
-                </a>
-              </div>
-            </div>
+        {{ end }}
+        
+        <div class="article-share">
+          <h4>Share this article</h4>
+          <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" 
+               target="_blank" rel="noopener noreferrer" 
+               class="share-button share-twitter" 
+               aria-label="Share on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+              <span>Twitter</span>
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" 
+               target="_blank" rel="noopener noreferrer" 
+               class="share-button share-linkedin" 
+               aria-label="Share on LinkedIn">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" 
+               target="_blank" rel="noopener noreferrer" 
+               class="share-button share-facebook" 
+               aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="mailto:?subject={{ .Title }}&body=Check out this article: {{ .Permalink }}" 
+               class="share-button share-email" 
+               aria-label="Share via Email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
           </div>
         </div>
-      </article>
+
+        {{ if .Params.author }}
+          <div class="author-bio">
+            <div class="author-image">
+              <img src="/assets/dither_it_1.JPG" alt="{{ .Params.author }}" loading="lazy">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">{{ .Params.author }}</h4>
+              <p class="author-description">Computer science student passionate about data science and machine learning. Specialized in neural networks and EEG signal analysis, focusing on the intersection of AI and neuroscience.</p>
+              <div class="author-social">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="author-link" aria-label="GitHub Profile">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="author-link" aria-label="LinkedIn Profile">
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="author-link" aria-label="Twitter Profile">
+                  <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:youremail@example.com" class="author-link" aria-label="Email">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </footer>
     </div>
-  </div>
-</div>
+  </article>
+</main>
+
+<script src="/js/toc.js" defer></script>
 {{ end }}

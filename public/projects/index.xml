@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Olisemeka Nmarkwe</title>
-    <link>//localhost:1313/projects/</link>
+    <link>http://localhost:3000/projects/</link>
     <description>Recent content in Projects on Olisemeka Nmarkwe</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:3000/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neural Network Performance Analysis</title>
-      <link>//localhost:1313/projects/neural-network-analysis/</link>
+      <link>http://localhost:3000/projects/neural-network-analysis/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/neural-network-analysis/</guid>
+      <guid>http://localhost:3000/projects/neural-network-analysis/</guid>
       <description>Analysis of neural network training performance including loss function behavior and optimization techniques.</description>
     </item>
     <item>
       <title>EEG Clustering and Model Evaluation</title>
-      <link>//localhost:1313/projects/eeg-clustering/</link>
+      <link>http://localhost:3000/projects/eeg-clustering/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/eeg-clustering/</guid>
+      <guid>http://localhost:3000/projects/eeg-clustering/</guid>
       <description>Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</description>
     </item>
   </channel>
