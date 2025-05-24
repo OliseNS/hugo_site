@@ -1,18 +1,25 @@
 /* 
- * Main CSS File - Hugo Site
+ * Main CSS - Clean, Minimal Hugo Site
+ * Apple-inspired design system
  * Author: Olise
- * Last updated: May 22, 2025
+ * Last updated: May 23, 2025
  */
 
-/* Import other stylesheets */
+/* Core Design System */
 @import 'variables.css';
 @import 'base.css';
+@import 'utilities.css';
 @import 'animations.css';
 @import 'layout.css';
+
+/* Components */
 @import 'components.css';
 @import 'header.css';
-@import 'home.css';
+
+/* Pages */
+@import 'home-minimal.css';
 @import 'projects.css';
 @import 'blog.css';
-@import 'timeline.css';
+
+/* Responsive */
 @import 'responsive.css';

@@ -1,152 +1,69 @@
 {{ define "main" }}
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-image-container">
-        <img src="{{ "assets/dither_it_1.JPG" | relURL }}" alt="Olisemeka Nmarkwe" class="profile-image">
-        <div class="hello-indicator">
-          <span class="hello-text">Ndewo</span>
-        </div>
-      </div>
-      <div class="hero-text">
-        <h1 class="hero-name">{{ .Site.Params.author.name | default "Olisemeka Nmarkwe" }}</h1>
-        <p class="hero-description">
-          {{ .Site.Params.author.tagline | default "Motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript." | markdownify }}
-        </p>
-        <div class="hero-actions">
-          <a href="{{ "assets/OlisemekaV3Resume.pdf" | relURL }}" class="btn-primary" download>
-            <span>Download Resume</span>
-          </a>
-        </div>
-      </div>
+<!-- Minimalist Homepage -->
+<div class="homepage-container">  <!-- Header Image -->
+  <div class="header-image-section">
+    <img src="{{ "assets/header.png" | relURL }}" alt="Olisemeka Nmarkwe" class="header-image">
+  </div>
+  
+  <!-- Changing Hello Text -->
+  <div class="hello-section">
+    <h1 class="hello-text">
+      <span id="hello-message">Hello</span> I'm Olisemeka
+    </h1>
+  </div>
+  
+  <!-- About Me and Resume -->
+  <div class="about-section">
+    <p class="about-description">
+      {{ .Site.Params.author.tagline | default "Motivated computer science student passionate about data analysis and machine learning. Proficient in Python, SQL, and JavaScript." | markdownify }}
+    </p>
+    <div class="resume-section">
+      <a href="{{ "assets/OlisemekaV3Resume.pdf" | relURL }}" class="resume-link" download>
+        Download Resume
+      </a>
     </div>
   </div>
-</section>
+</div>
 
 <!-- Skills Section -->
-<section class="skills-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Skills & Expertise</h2>
-    </div>
-    <div class="skills-container">
-      <div class="skills-category">
-        <h3 class="skills-category-title">Programming</h3>
-        <div class="skills-grid">
-          {{ range .Site.Params.skills.programming_languages }}
-            <div class="skill-item">
-              <div class="skill-icon">
-                <i class="{{ .icon }}"></i>
-              </div>
-              <span class="skill-name">{{ .name }}</span>
-            </div>
-          {{ end }}
-        </div>
-      </div>
-      
-      <div class="skills-category">
-        <h3 class="skills-category-title">Technical Skills</h3>
-        <div class="skills-grid">
-          {{ range .Site.Params.skills.technical_skills }}
-            <div class="skill-item">
-              <div class="skill-icon">
-                <i class="{{ .icon }}"></i>
-              </div>
-              <span class="skill-name">{{ .name }}</span>
-            </div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
+<div class="skills-section">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-container">
+    {{ range .Site.Params.skills.programming_languages }}
+      <div class="skill-item">{{ .name }}</div>
+    {{ end }}
+    {{ range .Site.Params.skills.technical_skills }}
+      <div class="skill-item">{{ .name }}</div>
+    {{ end }}
+    {{ range .Site.Params.skills.tools }}
+      <div class="skill-item">{{ .name }}</div>
+    {{ end }}
+    {{ range .Site.Params.skills.modeling_techniques }}
+      <div class="skill-item">{{ .name }}</div>
+    {{ end }}
   </div>
-</section>
+</div>
 
-<!-- Featured Posts Section -->
-<section class="featured-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Featured Work</h2>
-      <p class="section-subtitle">Recent thoughts and projects</p>
-    </div>
-    
-    {{ $featuredPosts := where (where .Site.RegularPages "Section" "blog") "Params.featured" true }}
-    {{ if gt (len $featuredPosts) 0 }}
-      <div class="featured-grid">
-        {{ range first 3 $featuredPosts.ByDate.Reverse }}
-          <article class="featured-card">
-            {{ if .Params.featured_image }}
-              <div class="featured-image">
-                <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" loading="lazy">
-              </div>
-            {{ end }}
-            
-            <div class="featured-content">
-              <div class="featured-meta">
-                {{ if .Date }}
-                  <time class="featured-date">{{ .Date.Format "Jan 2, 2006" }}</time>
-                {{ end }}
-                <span class="featured-read-time">{{ div (countwords .Content) 200 }} min read</span>
-              </div>
-              
-              <h3 class="featured-title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </h3>
-              
-              <p class="featured-excerpt">
-                {{ if .Description }}
-                  {{ .Description }}
-                {{ else }}
-                  {{ .Summary | truncate 120 }}
-                {{ end }}
-              </p>
-              
-              {{ if .Params.tags }}
-                <div class="featured-tags">
-                  {{ range first 2 .Params.tags }}
-                    <span class="featured-tag">{{ . }}</span>
-                  {{ end }}
-                </div>
-              {{ end }}
-            </div>
-          </article>
-        {{ end }}
-      </div>
-    {{ else }}
-      <div class="empty-state">
-        <div class="empty-icon">✨</div>
-        <h3 class="empty-title">New content coming soon</h3>
-        <p class="empty-message">Stay tuned for insightful articles and project updates.</p>
+<!-- Projects Section -->
+<div class="projects-section">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-container">
+    {{ $projects := where .Site.RegularPages "Section" "projects" }}
+    {{ range $projects }}
+      <div class="project-item">
+        <h3 class="project-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+        <p class="project-description">
+          {{ if .Description }}
+            {{ .Description }}
+          {{ else }}
+            {{ .Summary | truncate 120 }}
+          {{ end }}
+        </p>
       </div>
     {{ end }}
   </div>
-</section>
-{{ end }}
+</div>
 
-{{ define "scripts_extra" }}
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const helloMessage = document.getElementById("hello-message");
-    const messages = [
-      "Hello",          // English
-      "नमस्ते",          // Nepali
-      "Ndewo",          // Igbo
-      "Ciao",           // Italian
-      "Bonjour",        // French
-      "Hola",           // Spanish
-      "こんにちは",       // Japanese
-      "Guten Tag",      // German
-      "Привет",         // Russian
-      "Olá",            // Portuguese
-      "Kamusta",        // Filipino
-    ];
-    let index = 0;
-    if (helloMessage) {
-      setInterval(() => {
-        helloMessage.textContent = messages[index];
-        index = (index + 1) % messages.length;
-      }, 1500);
-    }
-  });
-</script>
 {{ end }}

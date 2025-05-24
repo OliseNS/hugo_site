@@ -3,6 +3,30 @@
  * Apple-inspired typography and element styles
  */
 
+/* Accessibility Enhancements */
+.skip-link:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Focus management for better accessibility */
+*:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Reset and Global Styles */
 *,
 *::before,

@@ -4,6 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deep-Learning | Olisemeka Nmarkwe</title>
+  
+  
+  <meta name="description" content="Personal website of Olisemeka Nmarkwe, a computer science student passionate about data analysis and machine learning.">
+  <meta name="author" content="Olisemeka Nmarkwe">
+  
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="//localhost:1313/tags/deep-learning/">
+  <meta property="og:title" content="Deep-Learning | Olisemeka Nmarkwe">
+  <meta property="og:description" content="Personal website of Olisemeka Nmarkwe, a computer science student passionate about data analysis and machine learning.">
+  <meta property="og:image" content="//localhost:1313/assets/dither_it_1.JPG">
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="//localhost:1313/tags/deep-learning/">
+  <meta property="twitter:title" content="Deep-Learning | Olisemeka Nmarkwe">
+  <meta property="twitter:description" content="Personal website of Olisemeka Nmarkwe, a computer science student passionate about data analysis and machine learning.">
+  <meta property="twitter:image" content="//localhost:1313/assets/dither_it_1.JPG">
+  
+  
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  
 
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -368,14 +394,31 @@
     }
   });
 </script>
-
-
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   
   <script src="/js/header-animations.js"></script>
   
+    
+  
+    <script src="/js/performance-monitor.js"></script>
+  
+    
   <script src="https://tinylytics.app/embed/nzEHpyHjcyNeFdoSXqeW.js" defer></script>
+  
+  
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('ServiceWorker registration successful');
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
   
   
 </body>
